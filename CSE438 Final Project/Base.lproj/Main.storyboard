@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hVH-e9-z2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hVH-e9-z2z">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -135,7 +135,7 @@
                                 <rect key="frame" x="166.66666666666666" y="528" width="42" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue destination="WOt-QE-BES" kind="show" id="RGT-dH-sGy"/>
+                                    <action selector="buttonClicked:" destination="ASZ-Ni-ZbP" eventType="touchUpInside" id="nGb-dq-jVM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Rate My Courses at Washu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4X-ws-WLE">
@@ -171,11 +171,14 @@
                     <navigationItem key="navigationItem" id="vHV-44-EZx"/>
                     <connections>
                         <outlet property="optionButton" destination="MyE-gp-T1A" id="bKY-d5-QdS"/>
+                        <outlet property="passwordTextField" destination="pJS-PS-9Yg" id="D3Y-Lg-7Zi"/>
                         <outlet property="submitButton" destination="T0W-p2-itS" id="NVG-Ic-6IV"/>
+                        <outlet property="usernameTextField" destination="Kg3-5l-olD" id="7B4-AV-GoJ"/>
                         <outletCollection property="options" destination="OST-Ce-ggb" collectionClass="NSMutableArray" id="XGm-s8-emm"/>
                         <outletCollection property="options" destination="rnt-b5-cJC" collectionClass="NSMutableArray" id="5cP-KQ-uWB"/>
                         <outletCollection property="options" destination="ugW-ke-AmY" collectionClass="NSMutableArray" id="mPE-t5-dv6"/>
                         <outletCollection property="options" destination="WTX-jA-1St" collectionClass="NSMutableArray" id="pq7-a4-qtr"/>
+                        <segue destination="WOt-QE-BES" kind="presentation" identifier="signInToTabbarVC" id="3PX-us-tE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZE-Me-suV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,8 +189,8 @@
         <scene sceneID="UTg-CY-WiZ">
             <objects>
                 <viewController id="WOt-QE-BES" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="E0c-Nu-3C0" customClass="SearchViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <view key="view" contentMode="scaleToFill" id="E0c-Nu-3C0" customClass="SearchViewController" customModule="CSE438_Final_Project" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AMC-NU-s9l"/>
@@ -196,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w06-P8-NRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="-8"/>
+            <point key="canvasLocation" x="674" y="-5"/>
         </scene>
     </scenes>
 </document>
