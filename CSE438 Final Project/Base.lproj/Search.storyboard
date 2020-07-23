@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOt-QE-BES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +13,11 @@
             <objects>
                 <viewController id="WOt-QE-BES" customClass="SearchViewController" customModule="CSE438_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E0c-Nu-3C0" userLabel="View">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anT-Cc-2bW">
-                                <rect key="frame" x="16" y="104" width="287" height="34"/>
+                                <rect key="frame" x="16" y="60" width="287" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="u4b-C8-mLI"/>
                                 </constraints>
@@ -24,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AtL-jL-BLU">
-                                <rect key="frame" x="0.0" y="158" width="375" height="568"/>
+                                <rect key="frame" x="10" y="114" width="394" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6K-0N-1m9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -44,28 +45,40 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="FFj-jO-szo">
-                                <rect key="frame" x="42.666666666666657" y="748" width="290" height="30"/>
+                                <rect key="frame" x="62" y="832" width="290" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Iz-QD-a5I">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                                         <state key="normal" title="Arts&amp;Sci"/>
+                                        <connections>
+                                            <action selector="selectAS:" destination="WOt-QE-BES" eventType="touchUpInside" id="Ehi-5W-5F2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLR-GB-nne">
                                         <rect key="frame" x="88" y="0.0" width="57" height="30"/>
                                         <state key="normal" title="Mckelvy"/>
+                                        <connections>
+                                            <action selector="selectEN:" destination="WOt-QE-BES" eventType="touchUpInside" id="bNV-eh-OtD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujs-3q-B2f">
                                         <rect key="frame" x="173" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Olin"/>
+                                        <connections>
+                                            <action selector="selectBU:" destination="WOt-QE-BES" eventType="touchUpInside" id="0JU-lN-of9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBu-Ex-VqM">
                                         <rect key="frame" x="231" y="0.0" width="59" height="30"/>
                                         <state key="normal" title="Sam Fox"/>
+                                        <connections>
+                                            <action selector="selectArt:" destination="WOt-QE-BES" eventType="touchUpInside" id="dV5-l1-5Gq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJr-Q8-bfN">
-                                <rect key="frame" x="311" y="106" width="48" height="30"/>
+                                <rect key="frame" x="311" y="62" width="87" height="30"/>
                                 <state key="normal" title="Search"/>
                             </button>
                         </subviews>
@@ -75,11 +88,11 @@
                             <constraint firstItem="anT-Cc-2bW" firstAttribute="centerY" secondItem="YJr-Q8-bfN" secondAttribute="centerY" id="9aQ-nk-Du9"/>
                             <constraint firstItem="anT-Cc-2bW" firstAttribute="top" secondItem="AMC-NU-s9l" secondAttribute="top" constant="16" id="BwY-9y-5gQ"/>
                             <constraint firstItem="FFj-jO-szo" firstAttribute="top" secondItem="AtL-jL-BLU" secondAttribute="bottom" constant="22" id="OLg-it-pCR"/>
-                            <constraint firstItem="AtL-jL-BLU" firstAttribute="leading" secondItem="AMC-NU-s9l" secondAttribute="leading" id="PP3-ml-Ctd"/>
+                            <constraint firstItem="AtL-jL-BLU" firstAttribute="leading" secondItem="AMC-NU-s9l" secondAttribute="leading" constant="10" id="PP3-ml-Ctd"/>
                             <constraint firstItem="anT-Cc-2bW" firstAttribute="leading" secondItem="AMC-NU-s9l" secondAttribute="leading" constant="16" id="VmL-ey-p69"/>
                             <constraint firstItem="FFj-jO-szo" firstAttribute="centerX" secondItem="AMC-NU-s9l" secondAttribute="centerX" id="WMe-eI-AEx"/>
                             <constraint firstItem="YJr-Q8-bfN" firstAttribute="leading" secondItem="anT-Cc-2bW" secondAttribute="trailing" constant="8" id="Wch-cm-D8p"/>
-                            <constraint firstItem="AMC-NU-s9l" firstAttribute="trailing" secondItem="AtL-jL-BLU" secondAttribute="trailing" id="Zfk-BV-V9w"/>
+                            <constraint firstItem="AMC-NU-s9l" firstAttribute="trailing" secondItem="AtL-jL-BLU" secondAttribute="trailing" constant="10" id="Zfk-BV-V9w"/>
                             <constraint firstItem="AMC-NU-s9l" firstAttribute="bottom" secondItem="FFj-jO-szo" secondAttribute="bottom" id="smh-ZK-gyG"/>
                             <constraint firstItem="AMC-NU-s9l" firstAttribute="trailing" secondItem="YJr-Q8-bfN" secondAttribute="trailing" constant="16" id="wp2-CQ-Bkc"/>
                         </constraints>
