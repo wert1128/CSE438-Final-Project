@@ -88,8 +88,8 @@ class LogInViewController: UIViewController {
 
                 self.present(alert, animated: true)
                 //self.option = "Student Log In"
-                self.optionButton.setTitle(self.option, for: .normal)
-                self.submitButton.setTitle("Log In", for: .normal)
+                //self.optionButton.setTitle(self.option, for: .normal)
+                //self.submitButton.setTitle("Log In", for: .normal)
             }
             
         } else {
