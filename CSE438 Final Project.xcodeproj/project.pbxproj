@@ -23,6 +23,8 @@
 		6CCE477CBDBB5E17346DC531 /* Pods_CSE438_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */; };
 		82537FE324C912B700AA867E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82537FE224C912B700AA867E /* GoogleService-Info.plist */; };
 		C01BE3CEE6D0A0523FE246B8 /* Pods_CSE438_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB807A365DA679C077FD3C /* Pods_CSE438_Final_ProjectTests.framework */; };
+		E824A42B24CA155C00DB47FD /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824A42A24CA155B00DB47FD /* CourseDetailViewController.swift */; };
+		E824A42D24CA156A00DB47FD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824A42C24CA156A00DB47FD /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		CDF329E7DB92F256956B6E62 /* Pods-CSE438 Final Project-CSE438 Final ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project-CSE438 Final ProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project-CSE438 Final ProjectUITests/Pods-CSE438 Final Project-CSE438 Final ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D8DB807A365DA679C077FD3C /* Pods_CSE438_Final_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSE438_Final_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5334C4E6CEBB70EFDDE06E /* Pods-CSE438 Final Project-CSE438 Final ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project-CSE438 Final ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project-CSE438 Final ProjectUITests/Pods-CSE438 Final Project-CSE438 Final ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E824A42A24CA155B00DB47FD /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		E824A42C24CA156A00DB47FD /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSE438_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +157,8 @@
 				4C507B6324C8BF560065CADE /* SearchViewController.swift */,
 				4C507B6D24C93DCE0065CADE /* department.swift */,
 				4C507B7124C93E0D0065CADE /* departmentCell.swift */,
+				E824A42A24CA155B00DB47FD /* CourseDetailViewController.swift */,
+				E824A42C24CA156A00DB47FD /* Course.swift */,
 			);
 			path = "CSE438 Final Project";
 			sourceTree = "<group>";
@@ -426,12 +432,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E824A42D24CA156A00DB47FD /* Course.swift in Sources */,
 				4C507B3824C8BE680065CADE /* LogInViewController.swift in Sources */,
 				4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */,
 				4C507B3424C8BE680065CADE /* AppDelegate.swift in Sources */,
 				4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */,
 				4C507B6E24C93DCE0065CADE /* department.swift in Sources */,
 				4C507B3624C8BE680065CADE /* SceneDelegate.swift in Sources */,
+				E824A42B24CA155C00DB47FD /* CourseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

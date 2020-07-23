@@ -7,6 +7,7 @@ target 'CSE438 Final Project' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Charts'
   # Pods for CSE438 Final Project
 
   target 'CSE438 Final ProjectTests' do
