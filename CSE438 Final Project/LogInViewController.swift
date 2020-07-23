@@ -51,8 +51,9 @@ class LogInViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: UIButton) {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
-        if(option == "Student Log In") {
+        if(option == "Student Log In" || option == "Professor Log In") {
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
+                //var user = authResult?.user
                 if(error != nil) {
                     let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
 
@@ -61,13 +62,10 @@ class LogInViewController: UIViewController {
                     self.present(alert, animated: true)
                     return
                 }
-                let user = authResult?.user
-                //print(user?.email)
+                
                 self.performSegue(withIdentifier: "signInToSearchVC", sender: nil)
             }
-        } else if (option == "Professor Log In") {
-            
-        } else if(option == "Student Sign Up") {
+        } else if(option == "Student Sign Up" || option == "Professor Sign Up") {
             Auth.auth().createUser(withEmail: username, password: password) { authResult, error in
                 if(error != nil) {
                     let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
@@ -83,18 +81,16 @@ class LogInViewController: UIViewController {
                 let usersReference = ref.child("users")
                 let userId = user?.uid
                 let newUserReference = usersReference.child(userId!)
-                newUserReference.setValue(["username": self.usernameTextField.text!])
+                newUserReference.setValue(["username": self.usernameTextField.text!, "role": (self.option == "Student Sign Up" ? "student" : "professor")])
                 let alert = UIAlertController(title: "Success", message: nil, preferredStyle: .alert)
 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
                 self.present(alert, animated: true)
-                self.option = "Student Log In"
-                self.optionButton.setTitle("Student Log In", for: .normal)
+                //self.option = "Student Log In"
+                self.optionButton.setTitle(self.option, for: .normal)
                 self.submitButton.setTitle("Log In", for: .normal)
             }
-            
-        } else if(option == "Professor Sign Up") {
             
         } else {
             
