@@ -54,7 +54,11 @@ class LogInViewController: UIViewController {
         if(option == "Student Log In") {
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
                 if(error != nil) {
-                    print(error!)
+                    let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                    self.present(alert, animated: true)
                     return
                 }
                 let user = authResult?.user
@@ -66,7 +70,11 @@ class LogInViewController: UIViewController {
         } else if(option == "Student Sign Up") {
             Auth.auth().createUser(withEmail: username, password: password) { authResult, error in
                 if(error != nil) {
-                    print(error!)
+                    let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                    self.present(alert, animated: true)
                     return
                 }
                 let user = authResult?.user
@@ -76,6 +84,14 @@ class LogInViewController: UIViewController {
                 let userId = user?.uid
                 let newUserReference = usersReference.child(userId!)
                 newUserReference.setValue(["username": self.usernameTextField.text!])
+                let alert = UIAlertController(title: "Success", message: nil, preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+                self.option = "Student Log In"
+                self.optionButton.setTitle("Student Log In", for: .normal)
+                self.submitButton.setTitle("Log In", for: .normal)
             }
             
         } else if(option == "Professor Sign Up") {
