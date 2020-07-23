@@ -19,6 +19,8 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! departmentCell
+        cell.department=departments[indexPath.row]
+        cell.update()
         return cell
     }
     
@@ -26,7 +28,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        departmentCollectionView.delegate=self
+        departmentCollectionView.dataSource=self
         departmentCollectionView.delegate=self
         departmentCollectionView.register(departmentCell.self, forCellWithReuseIdentifier: "Cell")
         departmentCollectionView.isUserInteractionEnabled = true
@@ -38,6 +40,14 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     func getDepartments(school:String){
         //yet to be implemented
         //get from database the lists of departments given a specific school, and populate them into the departments array
+        var a = department(id: 0, name: "test1")
+        var b = department(id: 0, name: "test2")
+        var c = department(id: 0, name: "test3")
+        var d = department(id: 0, name: "test4")
+        departments.append(a)
+        departments.append(b)
+        departments.append(c)
+        departments.append(d)
     }
     
     
