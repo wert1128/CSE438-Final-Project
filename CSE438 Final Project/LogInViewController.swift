@@ -7,12 +7,17 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseDatabase
 class LogInViewController: UIViewController {
 
     @IBOutlet weak var optionButton: UIButton!
     @IBOutlet var options: [UIButton]!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    var option: String? = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,6 +29,7 @@ class LogInViewController: UIViewController {
             }
             return
         }
+        self.option = title
         if(title=="Student Log In"||title == "Professor Log In"){
             submitButton.setTitle("Log In", for: .normal)
         }else{
@@ -42,6 +48,42 @@ class LogInViewController: UIViewController {
     }
     
     
-
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        let username = self.usernameTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
+        if(option == "Student Log In") {
+            Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
+                if(error != nil) {
+                    print(error!)
+                    return
+                }
+                let user = authResult?.user
+                //print(user?.email)
+                self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+            }
+        } else if (option == "Professor Log In") {
+            
+        } else if(option == "Student Sign Up") {
+            Auth.auth().createUser(withEmail: username, password: password) { authResult, error in
+                if(error != nil) {
+                    print(error!)
+                    return
+                }
+                let user = authResult?.user
+                let ref = Database.database().reference()
+                //print("desc:" + ref.description())
+                let usersReference = ref.child("users")
+                let userId = user?.uid
+                let newUserReference = usersReference.child(userId!)
+                newUserReference.setValue(["username": self.usernameTextField.text!])
+            }
+            
+        } else if(option == "Professor Sign Up") {
+            
+        } else {
+            
+        }
+    }
+    
 }
 
