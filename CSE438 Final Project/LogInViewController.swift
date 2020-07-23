@@ -17,7 +17,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-    var option: String? = ""
+    var option: String = "Student Log In"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -59,7 +59,7 @@ class LogInViewController: UIViewController {
                 }
                 let user = authResult?.user
                 //print(user?.email)
-                self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+                self.performSegue(withIdentifier: "signInToSearchVC", sender: nil)
             }
         } else if (option == "Professor Log In") {
             

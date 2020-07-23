@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		4C507B4B24C8BE6A0065CADE /* CSE438_Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B4A24C8BE6A0065CADE /* CSE438_Final_ProjectTests.swift */; };
 		4C507B5624C8BE6A0065CADE /* CSE438_Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B5524C8BE6A0065CADE /* CSE438_Final_ProjectUITests.swift */; };
 		4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B6324C8BF560065CADE /* SearchViewController.swift */; };
+		4C507B6E24C93DCE0065CADE /* department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B6D24C93DCE0065CADE /* department.swift */; };
+		4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B7124C93E0D0065CADE /* departmentCell.swift */; };
 		6CCE477CBDBB5E17346DC531 /* Pods_CSE438_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */; };
 		82537FE324C912B700AA867E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82537FE224C912B700AA867E /* GoogleService-Info.plist */; };
 		C01BE3CEE6D0A0523FE246B8 /* Pods_CSE438_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB807A365DA679C077FD3C /* Pods_CSE438_Final_ProjectTests.framework */; };
@@ -57,6 +59,8 @@
 		4C507B5524C8BE6A0065CADE /* CSE438_Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE438_Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		4C507B5724C8BE6A0065CADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C507B6324C8BF560065CADE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4C507B6D24C93DCE0065CADE /* department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = department.swift; sourceTree = "<group>"; };
+		4C507B7124C93E0D0065CADE /* departmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentCell.swift; sourceTree = "<group>"; };
 		82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CSE438 Final Project.entitlements"; sourceTree = "<group>"; };
 		82537FE224C912B700AA867E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9623840A00100084C6E8DF7E /* Pods-CSE438 Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project.release.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project/Pods-CSE438 Final Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +110,6 @@
 				CC2DC004AADC1F5DAE14E347 /* Pods-CSE438 Final ProjectTests.debug.xcconfig */,
 				CAFBBD436D72E19A7C5D605D /* Pods-CSE438 Final ProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,6 +148,8 @@
 				4C507B3E24C8BE6A0065CADE /* LaunchScreen.storyboard */,
 				4C507B4124C8BE6A0065CADE /* Info.plist */,
 				4C507B6324C8BF560065CADE /* SearchViewController.swift */,
+				4C507B6D24C93DCE0065CADE /* department.swift */,
+				4C507B7124C93E0D0065CADE /* departmentCell.swift */,
 			);
 			path = "CSE438 Final Project";
 			sourceTree = "<group>";
@@ -420,6 +425,8 @@
 				4C507B3824C8BE680065CADE /* LogInViewController.swift in Sources */,
 				4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */,
 				4C507B3424C8BE680065CADE /* AppDelegate.swift in Sources */,
+				4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */,
+				4C507B6E24C93DCE0065CADE /* department.swift in Sources */,
 				4C507B3624C8BE680065CADE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
