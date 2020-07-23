@@ -19,6 +19,7 @@
 		4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B6324C8BF560065CADE /* SearchViewController.swift */; };
 		4C507B6E24C93DCE0065CADE /* department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B6D24C93DCE0065CADE /* department.swift */; };
 		4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C507B7124C93E0D0065CADE /* departmentCell.swift */; };
+		4C6EEDD824C94AA700A2BA8B /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6EEDD724C94AA700A2BA8B /* Search.storyboard */; };
 		6CCE477CBDBB5E17346DC531 /* Pods_CSE438_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */; };
 		82537FE324C912B700AA867E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82537FE224C912B700AA867E /* GoogleService-Info.plist */; };
 		C01BE3CEE6D0A0523FE246B8 /* Pods_CSE438_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB807A365DA679C077FD3C /* Pods_CSE438_Final_ProjectTests.framework */; };
@@ -61,6 +62,7 @@
 		4C507B6324C8BF560065CADE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4C507B6D24C93DCE0065CADE /* department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = department.swift; sourceTree = "<group>"; };
 		4C507B7124C93E0D0065CADE /* departmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentCell.swift; sourceTree = "<group>"; };
+		4C6EEDD724C94AA700A2BA8B /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = SOURCE_ROOT; };
 		82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CSE438 Final Project.entitlements"; sourceTree = "<group>"; };
 		82537FE224C912B700AA867E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9623840A00100084C6E8DF7E /* Pods-CSE438 Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project.release.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project/Pods-CSE438 Final Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		4C507B3224C8BE680065CADE /* CSE438 Final Project */ = {
 			isa = PBXGroup;
 			children = (
+				4C6EEDD724C94AA700A2BA8B /* Search.storyboard */,
 				82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */,
 				4C507B3324C8BE680065CADE /* AppDelegate.swift */,
 				4C507B3524C8BE680065CADE /* SceneDelegate.swift */,
@@ -295,6 +298,7 @@
 				82537FE324C912B700AA867E /* GoogleService-Info.plist in Resources */,
 				4C507B3D24C8BE6A0065CADE /* Assets.xcassets in Resources */,
 				4C507B3B24C8BE680065CADE /* Main.storyboard in Resources */,
+				4C6EEDD824C94AA700A2BA8B /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
