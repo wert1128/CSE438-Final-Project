@@ -18,10 +18,10 @@ class departmentCell:UICollectionViewCell{
         //contentView.backgroundColor=UIColor.lightGray
         
         
-        let label=UILabel(frame: CGRect(x: 0, y: 0, width: 130, height: 20))
+        let label=UILabel(frame: CGRect(x: 0, y: 0, width: 170, height: 30))
         label.textColor=UIColor.systemBlue
-        label.text=department.name
-        label.font=UIFont(name: label.font.fontName, size: 15)
+        label.text="("+department.id+")"+department.name
+        label.font=UIFont(name: label.font.fontName, size: 14)
         label.textAlignment = NSTextAlignment.center
         contentView.addSubview(label)
         
