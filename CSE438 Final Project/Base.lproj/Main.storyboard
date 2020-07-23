@@ -189,6 +189,7 @@
         <!--Search View Controller-->
         <scene sceneID="UTg-CY-WiZ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w06-P8-NRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="WOt-QE-BES" customClass="SearchViewController" customModule="CSE438_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E0c-Nu-3C0" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -269,7 +270,6 @@
                         <outlet property="departmentCollectionView" destination="AtL-jL-BLU" id="WfC-Nl-K7a"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w06-P8-NRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="656.79999999999995" y="-5.1724137931034484"/>
         </scene>
