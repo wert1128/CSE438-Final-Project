@@ -136,7 +136,7 @@
                                 <rect key="frame" x="166.66666666666666" y="528" width="42" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue destination="WOt-QE-BES" kind="show" id="RGT-dH-sGy"/>
+                                    <action selector="buttonClicked:" destination="ASZ-Ni-ZbP" eventType="touchUpInside" id="BWk-M9-SxC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Rate My Courses at Washu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4X-ws-WLE">
@@ -172,22 +172,25 @@
                     <navigationItem key="navigationItem" id="vHV-44-EZx"/>
                     <connections>
                         <outlet property="optionButton" destination="MyE-gp-T1A" id="bKY-d5-QdS"/>
+                        <outlet property="passwordTextField" destination="pJS-PS-9Yg" id="peC-hw-ahu"/>
                         <outlet property="submitButton" destination="T0W-p2-itS" id="NVG-Ic-6IV"/>
+                        <outlet property="usernameTextField" destination="Kg3-5l-olD" id="beR-tW-Or1"/>
                         <outletCollection property="options" destination="OST-Ce-ggb" collectionClass="NSMutableArray" id="XGm-s8-emm"/>
                         <outletCollection property="options" destination="rnt-b5-cJC" collectionClass="NSMutableArray" id="5cP-KQ-uWB"/>
                         <outletCollection property="options" destination="ugW-ke-AmY" collectionClass="NSMutableArray" id="mPE-t5-dv6"/>
                         <outletCollection property="options" destination="WTX-jA-1St" collectionClass="NSMutableArray" id="pq7-a4-qtr"/>
+                        <segue destination="WOt-QE-BES" kind="show" identifier="signInToSearchVC" id="n1z-gY-hYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZE-Me-suV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-245.59999999999999" y="-5.1724137931034484"/>
+            <point key="canvasLocation" x="-204" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="UTg-CY-WiZ">
             <objects>
-                <viewController id="WOt-QE-BES" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="E0c-Nu-3C0" customClass="SearchViewController">
+                <viewController id="WOt-QE-BES" customClass="SearchViewController" customModule="CSE438_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0c-Nu-3C0" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -260,11 +263,11 @@
                             <constraint firstItem="AMC-NU-s9l" firstAttribute="trailing" secondItem="YJr-Q8-bfN" secondAttribute="trailing" constant="16" id="wp2-CQ-Bkc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AMC-NU-s9l"/>
-                        <connections>
-                            <outlet property="departmentCollectionView" destination="AtL-jL-BLU" id="UvJ-WD-wiC"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="bIm-HK-qH7"/>
+                    <connections>
+                        <outlet property="departmentCollectionView" destination="AtL-jL-BLU" id="WfC-Nl-K7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w06-P8-NRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
