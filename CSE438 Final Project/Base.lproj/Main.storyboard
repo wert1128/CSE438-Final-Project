@@ -188,10 +188,10 @@
         <!--Search-->
         <scene sceneID="1LJ-mT-s8Y">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3p-vq-JQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Search" id="jCf-wb-hko" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="HeH-1E-axP"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S3p-vq-JQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="656.79999999999995" y="-5.1724137931034484"/>
         </scene>
