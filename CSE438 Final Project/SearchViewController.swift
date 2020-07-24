@@ -114,10 +114,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
             self.departmentCollectionView.reloadData()
         
           // ...
-          }) { (error) in
-            
-            print(error.localizedDescription)
-        }
+          }) 
         
     }
     

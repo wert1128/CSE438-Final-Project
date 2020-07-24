@@ -11,14 +11,12 @@ import Foundation
 class User {
     var username: String
     var role: String
-    
     init() {
-        self.username = ""
-        self.role = ""
+        username = ""
+        role = ""
     }
     init(_ username: String, _ role: String) {
         self.username = username
         self.role = role
     }
-    
-} 
+}
