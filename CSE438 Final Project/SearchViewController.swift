@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
-
+import FirebaseAuth
 class SearchViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    var ref: DatabaseReference!
+    
     
     @IBOutlet weak var departmentCollectionView: UICollectionView!
     var departments:[department]=[]
+    var user:[User] = []
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return departments.count
     }
@@ -45,7 +48,10 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         departmentCollectionView.delegate=self
         departmentCollectionView.register(departmentCell.self, forCellWithReuseIdentifier: "Cell")
         departmentCollectionView.isUserInteractionEnabled = true
+        getCurrentUserRole()
         getDepartments(school:"A&S")
+        
+        //print(self.role)
         // Do any additional setup after loading the view.
         
     }
@@ -90,6 +96,30 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         
     }
     
+    func getCurrentUserRole(){
+        user = []
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("users").child(userID!)
+        
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+            let value = snapshot.value as? NSDictionary
+            if(value==nil){
+                return
+            }
+            let username = value!["username"] as! String
+            let role = value!["role"] as! String
+            self.user.append(User(username, role))
+            self.departmentCollectionView.reloadData()
+        
+          // ...
+          }) { (error) in
+            
+            print(error.localizedDescription)
+        }
+        
+    }
     
 
 }
