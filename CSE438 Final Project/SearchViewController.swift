@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-class SearchViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class SearchViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
     @IBOutlet weak var departmentCollectionView: UICollectionView!
     var departments:[department]=[]
