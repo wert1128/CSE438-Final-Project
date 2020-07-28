@@ -14,6 +14,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     @IBOutlet weak var departmentCollectionView: UICollectionView!
     var departments:[department]=[]
+    var selectedDepartment:String=""
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return departments.count
     }
@@ -36,6 +37,21 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         cell.update()
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDepartment=departments[indexPath.row].id
+        self.performSegue(withIdentifier: "toResultVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == "toResultVC" {
+            let VC = segue.destination as? ResultViewController
+            
+            VC!.departmentID=selectedDepartment
+        }
+    }
+    
     
 
 
