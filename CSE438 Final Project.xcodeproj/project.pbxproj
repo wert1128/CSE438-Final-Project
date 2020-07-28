@@ -73,6 +73,7 @@
 		4CB16FCF24CFE8D2001D9FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Result.storyboard; sourceTree = "<group>"; };
 		4CB16FD224CFE9AA001D9FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Detail.storyboard; sourceTree = "<group>"; };
 		4CB16FD424D0ABDD001D9FE2 /* ResultCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCourse.swift; sourceTree = "<group>"; };
+		4CB16FD624D0BB93001D9FE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CSE438 Final Project.entitlements"; sourceTree = "<group>"; };
 		82537FE224C912B700AA867E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9623840A00100084C6E8DF7E /* Pods-CSE438 Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project.release.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project/Pods-CSE438 Final Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 				E824A42C24CA156A00DB47FD /* Course.swift */,
 				4CB16FCC24CFDE57001D9FE2 /* ResultViewController.swift */,
 				4CB16FD424D0ABDD001D9FE2 /* ResultCourse.swift */,
+				4CB16FD624D0BB93001D9FE2 /* README.md */,
 			);
 			path = "CSE438 Final Project";
 			sourceTree = "<group>";
