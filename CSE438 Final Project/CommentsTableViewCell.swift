@@ -42,11 +42,24 @@ class CommentsTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeAction(_ sender: Any) {
-        
+        likeButton.isEnabled = false
+        dislikeButton.isEnabled = false
+        likeButton.isHighlighted = true
+        let commentRef = ref.child(theComment!.id)
+        let likeRef = commentRef.child("likes")
+        likeRef.setValue(theComment!.likes+1)
+        likes.text = "\(theComment!.likes+1)"
     }
     
     
     @IBAction func dislikeAction(_ sender: Any) {
+        likeButton.isEnabled = false
+        dislikeButton.isEnabled = false
+        dislikeButton.isHighlighted = true
+        let commentRef = ref.child(theComment!.id)
+        let dislikeRef = commentRef.child("dislikes")
+        dislikeRef.setValue(theComment!.dislikes+1)
+        dislikes.text = "\(theComment!.dislikes+1)"
     }
     
     @IBAction func deleteAction(_ sender: Any) {
