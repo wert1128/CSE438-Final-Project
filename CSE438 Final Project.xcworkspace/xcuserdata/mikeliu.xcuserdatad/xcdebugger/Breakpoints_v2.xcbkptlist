@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "68F4F95D-4ED1-433B-9AC6-188337A46962"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CSE438 Final Project/CourseInfoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "getSection()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D3E3C988-DCE5-4000-BC25-2F5B005E53E3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -82,6 +66,130 @@
             endingLineNumber = "39"
             landmarkName = "getProfessor(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSE438 Final Project/CourseInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "CourseInfoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0 - e920ebfa6f5127b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSE438_Final_Project.CourseInfoViewController.location.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "CSE438 Final Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikeliu/workplace/cse438/CSE438-Final-Project/CSE438%20Final%20Project/CourseInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0 - 171eaf4fa734c3bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSE438_Final_Project.CourseInfoViewController.location.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "CSE438 Final Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikeliu/workplace/cse438/CSE438-Final-Project/CSE438%20Final%20Project/CourseInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0 - eaa9a7f9090cc8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSE438_Final_Project.CourseInfoViewController.location.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "CSE438 Final Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikeliu/workplace/cse438/CSE438-Final-Project/CSE438%20Final%20Project/CourseInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0 - c1337c6d40e54f40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSE438_Final_Project.CourseInfoViewController.location.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CSE438 Final Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikeliu/workplace/cse438/CSE438-Final-Project/CSE438%20Final%20Project/CourseInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0 - a9d8b6a6d62afd28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSE438_Final_Project.CourseInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CSE438_Final_Project.CourseInfoViewController"
+                  moduleName = "CSE438 Final Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikeliu/workplace/cse438/CSE438-Final-Project/CSE438%20Final%20Project/CourseInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "63F0A690-A881-40D6-9D73-C09E4634CDA0 - 5fcd8305cddc9c01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSE438_Final_Project.CourseInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CSE438_Final_Project.CourseInfoViewController&gt;"
+                  moduleName = "CSE438 Final Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikeliu/workplace/cse438/CSE438-Final-Project/CSE438%20Final%20Project/CourseInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "616">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2154467D-D00B-4D6A-84FB-D7A899BBA92C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSE438 Final Project/ResultCourse.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ResultCourse"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

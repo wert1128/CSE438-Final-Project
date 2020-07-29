@@ -26,6 +26,8 @@
 		4CB16FD524D0ABDD001D9FE2 /* ResultCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB16FD424D0ABDD001D9FE2 /* ResultCourse.swift */; };
 		6CCE477CBDBB5E17346DC531 /* Pods_CSE438_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */; };
 		82537FE324C912B700AA867E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82537FE224C912B700AA867E /* GoogleService-Info.plist */; };
+		828C62AB24D202D000407C07 /* MyCourses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828C62AA24D202D000407C07 /* MyCourses.storyboard */; };
+		828C62AD24D202F800407C07 /* MyCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C62AC24D202F800407C07 /* MyCoursesViewController.swift */; };
 		C01BE3CEE6D0A0523FE246B8 /* Pods_CSE438_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB807A365DA679C077FD3C /* Pods_CSE438_Final_ProjectTests.framework */; };
 		E824A42B24CA155C00DB47FD /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824A42A24CA155B00DB47FD /* CourseDetailViewController.swift */; };
 		E824A42D24CA156A00DB47FD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824A42C24CA156A00DB47FD /* Course.swift */; };
@@ -81,6 +83,8 @@
 		4CB16FD624D0BB93001D9FE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CSE438 Final Project.entitlements"; sourceTree = "<group>"; };
 		82537FE224C912B700AA867E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		828C62AA24D202D000407C07 /* MyCourses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyCourses.storyboard; sourceTree = "<group>"; };
+		828C62AC24D202F800407C07 /* MyCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesViewController.swift; sourceTree = "<group>"; };
 		9623840A00100084C6E8DF7E /* Pods-CSE438 Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project.release.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project/Pods-CSE438 Final Project.release.xcconfig"; sourceTree = "<group>"; };
 		CAFBBD436D72E19A7C5D605D /* Pods-CSE438 Final ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-CSE438 Final ProjectTests/Pods-CSE438 Final ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC2DC004AADC1F5DAE14E347 /* Pods-CSE438 Final ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-CSE438 Final ProjectTests/Pods-CSE438 Final ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				4CB16FD624D0BB93001D9FE2 /* README.md */,
 				E89B33AB24D0FDF10024647E /* Section.swift */,
 				E89B33AD24D1245F0024647E /* StatsViewController.swift */,
+				828C62AA24D202D000407C07 /* MyCourses.storyboard */,
+				828C62AC24D202F800407C07 /* MyCoursesViewController.swift */,
 			);
 			path = "CSE438 Final Project";
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				4CB16FD024CFE8D2001D9FE2 /* Result.storyboard in Resources */,
 				82537FE324C912B700AA867E /* GoogleService-Info.plist in Resources */,
 				E89B33B524D1F8930024647E /* CourseEdit.storyboard in Resources */,
+				828C62AB24D202D000407C07 /* MyCourses.storyboard in Resources */,
 				4C507B3D24C8BE6A0065CADE /* Assets.xcassets in Resources */,
 				4CB16FD324CFE9AA001D9FE2 /* Detail.storyboard in Resources */,
 				4C507B3B24C8BE680065CADE /* Main.storyboard in Resources */,
@@ -468,6 +475,7 @@
 				4C507B3824C8BE680065CADE /* LogInViewController.swift in Sources */,
 				4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */,
 				4C507B3424C8BE680065CADE /* AppDelegate.swift in Sources */,
+				828C62AD24D202F800407C07 /* MyCoursesViewController.swift in Sources */,
 				E89B33AA24D0CAA30024647E /* CourseInfoViewController.swift in Sources */,
 				E89B33B024D1F73E0024647E /* CouseEditController.swift in Sources */,
 				4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */,
