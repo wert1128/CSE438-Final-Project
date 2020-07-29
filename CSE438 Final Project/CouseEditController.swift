@@ -31,36 +31,41 @@ class CourseEditController: UIViewController {
     
     
     @IBAction func Submit(_ sender: Any) {
-        var courseDict: [String: String] = [:]
+        var courseDict: [String: Any] = [:]
         if (AText.text != nil && AText.text != "") {
-            courseDict.updateValue(AText.text!, forKey: "A")
+            courseDict.updateValue(Int(AText.text!) ?? 0, forKey: "A")
         }
         if (BText.text != nil && BText.text != "") {
-            courseDict.updateValue(BText.text!, forKey: "B")
+            courseDict.updateValue(Int(BText.text!) ?? 0, forKey: "B")
         }
         if (CText.text != nil && CText.text != "") {
-            courseDict.updateValue(CText.text!, forKey: "C")
+            courseDict.updateValue(Int(CText.text!) ?? 0, forKey: "C")
         }
         if (DText.text != nil && DText.text != "") {
-            courseDict.updateValue(DText.text!, forKey: "D")
+            courseDict.updateValue(Int(DText.text!) ?? 0, forKey: "D")
         }
         if (PText.text != nil && PText.text != "") {
-            courseDict.updateValue(PText.text!, forKey: "Pass")
+            courseDict.updateValue(Int(PText.text!) ?? 0, forKey: "Pass")
+        }
+        if (FText.text != nil && FText.text != "") {
+            courseDict.updateValue(Int(FText.text!) ?? 0, forKey: "Fail")
         }
         if (avgGPAText.text != nil && avgGPAText.text != "") {
-            courseDict.updateValue(avgGPAText.text!, forKey: "avgGPA")
+            courseDict.updateValue(Double(avgGPAText.text!) ?? 0, forKey: "avgGPA")
         }
         //print(courseDict)
         let deptRef = ref.child(self.departmentId!)
         let childRef = deptRef.child(self.courseId!)
+        
         childRef.setValue(courseDict) {
           (error:Error?, ref:DatabaseReference) in
           if let error = error {
-            print("Data could not be saved: \(error).")
+            print("Data except GPA could not be saved: \(error).")
           } else {
-            print("Data saved successfully!")
+            print("Data except GPA saved successfully!")
           }
         }
+        
     }
     
 }
