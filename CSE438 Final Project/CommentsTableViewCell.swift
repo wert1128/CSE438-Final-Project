@@ -6,7 +6,9 @@
 //  Copyright © 2020 Michael Zhao. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import FirebaseDatabase
 
 class CommentsTableViewCell: UITableViewCell {
 
@@ -16,8 +18,11 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var dislikes: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var theComment:Comment?
+    weak var delegate:CommentsTableCellDelegate?
+    let ref = Database.database().reference(withPath: "comments")
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +31,7 @@ class CommentsTableViewCell: UITableViewCell {
         content.text = theComment?.content
         likes.text = "\(String(describing: theComment?.likes))"
         dislikes.text = "\(String(describing: theComment?.dislikes))"
+        
         
     }
 
@@ -43,4 +49,13 @@ class CommentsTableViewCell: UITableViewCell {
     @IBAction func dislikeAction(_ sender: Any) {
     }
     
+    @IBAction func deleteAction(_ sender: Any) {
+        let commentRef = ref.child(theComment!.id)
+        commentRef.removeValue()
+        delegate?.deleteButtonPressed()
+    }
+}
+
+protocol CommentsTableCellDelegate: class {
+    func deleteButtonPressed()
 }

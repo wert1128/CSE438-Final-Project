@@ -359,10 +359,21 @@
                                                         <action selector="likeAction:" destination="SQC-2v-rWa" eventType="touchUpInside" id="9V4-EF-J78"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X6-tS-5zp">
+                                                    <rect key="frame" x="16" y="110" width="45" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteAction:" destination="SQC-2v-rWa" eventType="touchUpInside" id="Fip-sF-Xlw"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="content" destination="ezD-Uk-78W" id="RAP-Rx-ewZ"/>
+                                            <outlet property="deleteButton" destination="2X6-tS-5zp" id="1c2-UG-7LG"/>
                                             <outlet property="dislikeButton" destination="ZZ6-gp-Fch" id="mOR-7S-jNZ"/>
                                             <outlet property="dislikes" destination="tPv-3t-pu5" id="Y7a-nk-OfK"/>
                                             <outlet property="likeButton" destination="Usz-C9-M6B" id="2Li-vZ-1gf"/>

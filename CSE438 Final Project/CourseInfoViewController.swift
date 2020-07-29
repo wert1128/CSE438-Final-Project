@@ -21,6 +21,8 @@ class CourseInfoViewController: UIViewController {
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var seats: UILabel!
     
+    let ref = Database.database().reference(withPath: "sections")
+    
     var courseId:String?
     var name:String?
     var credits:String?
@@ -42,9 +44,9 @@ class CourseInfoViewController: UIViewController {
     func getSection(){
         if let courId = courseId{
             print(courId)
-            let ref = Database.database().reference().child("sections").child(courId)
+            let secRef = ref.child(courId)
             theSections = []
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            secRef.observeSingleEvent(of: .value, with: { (snapshot) in
               let value = snapshot.value as? NSDictionary
               if(value==nil){
                   print("no result")

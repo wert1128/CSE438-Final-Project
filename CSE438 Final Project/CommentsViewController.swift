@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-class CommentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CommentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CommentsTableCellDelegate {
+    
+    func deleteButtonPressed() {
+        fetchComments()
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +33,13 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         theCell.content.text = theComments[indexPath.row].content
         theCell.likes.text = "\(theComments[indexPath.row].likes)"
         theCell.dislikes.text = "\(theComments[indexPath.row].dislikes)"
+        let curUsername = UserDefaults.standard.string(forKey: "username")
+        if curUsername == theComments[indexPath.row].username{
+            theCell.deleteButton.isHidden = false
+        }else{
+            theCell.deleteButton.isHidden = true
+        }
+        theCell.delegate = self
         return theCell
     }
     
