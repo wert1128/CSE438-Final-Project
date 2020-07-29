@@ -73,6 +73,10 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
 //            print(selectedCourseCredit)
 //            print(selectedCourseDescription)
         }
+        else if(segue.identifier == "toMyCoursesVC") {
+            let VC = segue.destination as? MyCoursesViewController
+            VC!.departmentID = self.departmentID
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -77,6 +77,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaz-Bq-LVv">
                                 <rect key="frame" x="148" y="774" width="79" height="30"/>
                                 <state key="normal" title="My courses"/>
+                                <connections>
+                                    <segue destination="dnM-Ef-njX" kind="show" identifier="toMyCoursesVC" id="SaJ-1P-qKN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -110,6 +113,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgL-C8-lkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704" y="302"/>
+        </scene>
+        <!--MyCourses-->
+        <scene sceneID="Uzu-1D-NUr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyCourses" id="dnM-Ef-njX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5RY-YO-wvH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3np-2U-TD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="701"/>
         </scene>
     </scenes>
 </document>

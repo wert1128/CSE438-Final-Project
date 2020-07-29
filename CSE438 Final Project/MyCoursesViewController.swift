@@ -14,12 +14,14 @@ import FirebaseDatabase
 
 class MyCourseTableViewCell: UITableViewCell{
     var myCourse:ResultCourse!
-
-//    func update(){
-//        nameLabel.text=myCourse.id+" "+myCourse.name
-//        unitLabel.text="Credit: "+String(myCourse.credits)
-//        descriptionLabel.text="Description: "+myCourse.description
-//    }
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
+    func update(){
+        nameLabel.text=myCourse.id+" "+myCourse.name
+        unitLabel.text="Credit: "+String(myCourse.credits)
+        descriptionLabel.text="Description: "+myCourse.description
+    }
 }
 class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var resultTable: UITableView!
@@ -77,7 +79,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultTable.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! ClassTableViewCell
+        let cell = resultTable.dequeueReusableCell(withIdentifier: "myCourseCell", for: indexPath) as! MyCourseTableViewCell
         cell.myCourse=results[indexPath.row]
         cell.update()
         return cell
