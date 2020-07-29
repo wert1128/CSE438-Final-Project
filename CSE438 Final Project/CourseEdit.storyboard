@@ -101,8 +101,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-UI-Z2p">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-UI-Z2p">
                                 <rect key="frame" x="183" y="748" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="Submit:" destination="daa-E4-26i" eventType="touchUpInside" id="wHn-VA-mZ2"/>
@@ -129,7 +130,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QEr-sN-Eav" firstAttribute="centerX" secondItem="jU8-UI-Z2p" secondAttribute="centerX" id="3uh-31-bvP"/>
                             <constraint firstItem="QEr-sN-Eav" firstAttribute="centerX" secondItem="V1X-ch-dyU" secondAttribute="centerX" id="NSB-Bn-LK3"/>
                             <constraint firstItem="QEr-sN-Eav" firstAttribute="leading" secondItem="g8c-s7-0IF" secondAttribute="leading" constant="100" id="Ncr-hW-e2H"/>
                             <constraint firstItem="g8c-s7-0IF" firstAttribute="trailing" secondItem="QEr-sN-Eav" secondAttribute="trailing" constant="100" id="xWL-iH-5y8"/>

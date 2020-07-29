@@ -48,6 +48,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         if segue.identifier == "toEditVC" {
             let VC = segue.destination as? CourseEditController
             VC?.courseId = selectedCourseID
+            VC?.departmentId = self.departmentID
         }
 //        if segue.identifier == "toEditVC" {
 //            let VC = segue.destination as? UITabBarController

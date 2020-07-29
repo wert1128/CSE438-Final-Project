@@ -11,6 +11,7 @@ import UIKit
 import FirebaseDatabase
 class CourseEditController: UIViewController {
     var courseId: String?
+    var departmentId: String?
     @IBOutlet weak var AText: UITextField!
     @IBOutlet weak var BText: UITextField!
     @IBOutlet weak var CText: UITextField!
@@ -23,7 +24,8 @@ class CourseEditController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        courseNameLabel.text = self.courseId
+        let text = self.departmentId! + self.courseId!
+        courseNameLabel.text = text
         //print(self.courseId ?? "")
     }
     
@@ -48,8 +50,9 @@ class CourseEditController: UIViewController {
         if (avgGPAText.text != nil && avgGPAText.text != "") {
             courseDict.updateValue(avgGPAText.text!, forKey: "avgGPA")
         }
-        print(courseDict)
-        let childRef = ref.child(self.courseId!)
+        //print(courseDict)
+        let deptRef = ref.child(self.departmentId!)
+        let childRef = deptRef.child(self.courseId!)
         childRef.setValue(courseDict) {
           (error:Error?, ref:DatabaseReference) in
           if let error = error {
