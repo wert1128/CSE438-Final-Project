@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 class LogInViewController: UIViewController {
-
+    let userdefault = UserDefaults.standard
     @IBOutlet weak var optionButton: UIButton!
     @IBOutlet var options: [UIButton]!
     @IBOutlet weak var submitButton: UIButton!
@@ -52,6 +52,11 @@ class LogInViewController: UIViewController {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
         if(option == "Student Log In" || option == "Professor Log In") {
+            if(option == "Student Log In") {
+                userdefault.set(true, forKey: "isStudent")
+            } else {
+                userdefault.set(false, forKey: "isStudent")
+            }
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
                 //var user = authResult?.user
                 if(error != nil) {
@@ -82,6 +87,7 @@ class LogInViewController: UIViewController {
                 let userId = user?.uid
                 let newUserReference = usersReference.child(userId!)
                 newUserReference.setValue(["username": self.usernameTextField.text!, "role": (self.option == "Student Sign Up" ? "student" : "professor")])
+                
                 let alert = UIAlertController(title: "Success", message: nil, preferredStyle: .alert)
 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
