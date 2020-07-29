@@ -53,7 +53,10 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
             let VC = segue.destination as? UITabBarController
             let barViews = VC?.viewControllers
             let infoVC = barViews![0] as! CourseInfoViewController
+            let statsVC = barViews! [1] as! StatsViewController
             //declare a course ID variable in CourseDetailViewController, and pass the selectedCourseID to it, and that will be the ID for the selected Course
+            statsVC.courseId = selectedCourseID
+            statsVC.departmentId = departmentID!
             infoVC.courseId = selectedCourseID
             infoVC.name = selectedCourseName
             infoVC.credits = selectedCourseCredit

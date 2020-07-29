@@ -9,7 +9,7 @@
 import Foundation
 
 struct Section {
-    let id:Int
+    let id:String
     let day:String
     let instructor:String
     let location:String

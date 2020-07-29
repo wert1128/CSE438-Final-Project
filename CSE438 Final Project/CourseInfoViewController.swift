@@ -35,15 +35,9 @@ class CourseInfoViewController: UIViewController {
         }
         credit.text = credits
         courseDescription.text = courseDes
-        //print(courseId!)
         getSection()
-        let items = ["1","2","3"]
-        let customSC = UISegmentedControl(items: items)
-        customSC.selectedSegmentIndex = 0
-        customSC.frame = CGRect(x: 27, y: 10, width: 320, height: 30)
-        infoView.addSubview(customSC)
-        print(theSections)
     }
+    
     
     func getSection(){
         if let courId = courseId{
@@ -57,7 +51,7 @@ class CourseInfoViewController: UIViewController {
                   return
               }
               for section in value!{
-                  let id = section.key as! Int
+                  let id = section.key as! String
                   let dic = section.value as! NSDictionary
                   let day = dic["day"] as! String
                   let instructor = dic["instructor"] as! String
@@ -66,11 +60,40 @@ class CourseInfoViewController: UIViewController {
                   let time = dic["time"] as! String
                   let aSection = Section(id: id, day: day, instructor: instructor, location: location, seats: seats, time: time)
                   self.theSections.append(aSection)
+                //print(self.theSections)
+                
               }
+                self.setupSectionInfos()
               }) { (error) in
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func setupSectionInfos(){
+        //print(theSections)
+        var items:[String] = []
+        for aSection in theSections{
+            items.append(aSection.id)
+        }
+        print(items)
+        let customSC = UISegmentedControl(items: items)
+        customSC.selectedSegmentIndex = 0
+        customSC.frame = CGRect(x: 27, y: 10, width: 320, height: 30)
+        customSC.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
+        instructor.text = theSections[0].instructor
+        location.text = theSections[0].location
+        seats.text = String(theSections[0].seats)
+        schedule.text = "\(theSections[0].day) \(theSections[0].time)"
+        infoView.addSubview(customSC)
+    }
+    
+    @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
+        let num = segmentedControl.selectedSegmentIndex
+        instructor.text = theSections[num].instructor
+        location.text = theSections[num].location
+        seats.text = String(theSections[num].seats)
+        schedule.text = "\(theSections[num].day) \(theSections[num].time)"
     }
 
     /*
