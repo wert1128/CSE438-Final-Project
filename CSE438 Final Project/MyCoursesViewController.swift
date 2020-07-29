@@ -74,7 +74,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     func isInstructor(_ name: String, _ instructors: String) -> Bool {
-        let arr = instructors.split(separator: ",")
+        let arr = instructors.split(separator: ";")
         for instructor in arr {
             if(name == instructor) {
                 return true
