@@ -16,11 +16,15 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     var option: String = "Student Log In"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        nameLabel.isHidden = true
+        nameTextField.isHidden = true
     }
     @IBAction func optionSelected(_ sender: UIButton) {
         guard let title = sender.titleLabel?.text else{
@@ -34,6 +38,13 @@ class LogInViewController: UIViewController {
             submitButton.setTitle("Log In", for: .normal)
         }else{
             submitButton.setTitle("Sign Up", for: .normal)
+        }
+        if(title == "Student Log In" || title == "Student Sign Up" || title == "Professor Sign Up") {
+            nameLabel.isHidden = true
+            nameTextField.isHidden = true
+        } else {
+            nameLabel.isHidden = false
+            nameTextField.isHidden = false
         }
         optionButton.setTitle(title, for: .normal)
         for button in options{
@@ -51,11 +62,21 @@ class LogInViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: UIButton) {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
+        let name: String = self.nameTextField.text ?? ""
         if(option == "Student Log In" || option == "Professor Log In") {
             if(option == "Student Log In") {
                 userdefault.set(true, forKey: "isStudent")
             } else {
                 userdefault.set(false, forKey: "isStudent")
+                userdefault.set(name, forKey: "name")
+            }
+            if(name == "" && option == "Professor Log In") {
+                let alert = UIAlertController(title: "Error", message: "Professor must provide a real name", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+                return
             }
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
                 //var user = authResult?.user
