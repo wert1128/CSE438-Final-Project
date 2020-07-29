@@ -67,7 +67,6 @@ class LogInViewController: UIViewController {
                     self.present(alert, animated: true)
                     return
                 }
-                
                 self.performSegue(withIdentifier: "signInToSearchVC", sender: nil)
             }
         } else if(option == "Student Sign Up" || option == "Professor Sign Up") {

@@ -40,15 +40,22 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
-        fetchComments()
+        //fetchComments()
     }
     
     @IBAction func writeCommentAction(_ sender: Any) {
-        
+        //self.performSegue(withIdentifier: "toEditVC", sender: self)
     }
     
-    func writeComment(){
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "toEditVC" {
+            let VC = segue.destination as? EditCommentViewController
+            VC?.courseId = courseId
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchComments()
     }
     
     func fetchComments(){

@@ -37,6 +37,7 @@
 		E89B33BD24D221460024647E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33BC24D221460024647E /* Comment.swift */; };
 		E89B33BF24D221560024647E /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33BE24D221560024647E /* CommentsTableViewCell.swift */; };
 		E89B33C324D223600024647E /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33C224D223600024647E /* CommentsViewController.swift */; };
+		E89B33C524D227130024647E /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33C424D227130024647E /* EditCommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		E89B33BC24D221460024647E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		E89B33BE24D221560024647E /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		E89B33C224D223600024647E /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		E89B33C424D227130024647E /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
 		EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSE438_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				828C62AA24D202D000407C07 /* MyCourses.storyboard */,
 				828C62AC24D202F800407C07 /* MyCoursesViewController.swift */,
 				E89B33C224D223600024647E /* CommentsViewController.swift */,
+				E89B33C424D227130024647E /* EditCommentViewController.swift */,
 			);
 			path = "CSE438 Final Project";
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */,
 				E89B33C324D223600024647E /* CommentsViewController.swift in Sources */,
 				4CB16FD524D0ABDD001D9FE2 /* ResultCourse.swift in Sources */,
+				E89B33C524D227130024647E /* EditCommentViewController.swift in Sources */,
 				4C507B6E24C93DCE0065CADE /* department.swift in Sources */,
 				E89B33BF24D221560024647E /* CommentsTableViewCell.swift in Sources */,
 				E89B33AE24D1245F0024647E /* StatsViewController.swift in Sources */,

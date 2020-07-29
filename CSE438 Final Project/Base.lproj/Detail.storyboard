@@ -378,6 +378,7 @@
                                 <state key="normal" title="Write Comment"/>
                                 <connections>
                                     <action selector="writeCommentAction:" destination="0Jz-uN-mxd" eventType="touchUpInside" id="s1a-q0-TuO"/>
+                                    <segue destination="j5s-XJ-crs" kind="show" identifier="toEditVC" id="Jyb-EL-88I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -395,6 +396,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6w-oG-HjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4148" y="1525.8620689655172"/>
+        </scene>
+        <!--Edit Comment View Controller-->
+        <scene sceneID="W2f-1t-UBL">
+            <objects>
+                <viewController id="j5s-XJ-crs" customClass="EditCommentViewController" customModule="CSE438_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GUd-oX-Vz9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BJ-T9-CHR">
+                                <rect key="frame" x="308" y="88" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Publish"/>
+                                <connections>
+                                    <action selector="publishAction:" destination="j5s-XJ-crs" eventType="touchUpInside" id="BIx-jQ-O35"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-YB-4fm">
+                                <rect key="frame" x="0.0" y="126" width="375" height="304"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="op2-9Q-veA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q15-jb-P1p"/>
+                    <connections>
+                        <outlet property="content" destination="yOs-YB-4fm" id="42Q-x3-TEZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9Z-u0-dbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4983.1999999999998" y="1525.8620689655172"/>
         </scene>
     </scenes>
     <resources>
