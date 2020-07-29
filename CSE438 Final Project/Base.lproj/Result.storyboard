@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVp-xy-UKf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVp-xy-UKf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lg2-8C-d3S">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="726"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classCell" rowHeight="104" id="Q7G-6c-3aG" customClass="ClassTableViewCell" customModule="CSE438_Final_Project" customModuleProvider="target">
@@ -74,18 +74,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaz-Bq-LVv">
+                                <rect key="frame" x="148" y="774" width="79" height="30"/>
+                                <state key="normal" title="My courses"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aaz-Bq-LVv" secondAttribute="bottom" constant="8" id="CTK-lo-CIW"/>
+                            <constraint firstItem="aaz-Bq-LVv" firstAttribute="centerX" secondItem="rwN-NI-uNy" secondAttribute="centerX" id="SXg-Ea-mc9"/>
                             <constraint firstItem="lg2-8C-d3S" firstAttribute="leading" secondItem="6WA-kX-rGA" secondAttribute="leading" id="n58-k2-shS"/>
                             <constraint firstItem="lg2-8C-d3S" firstAttribute="top" secondItem="6WA-kX-rGA" secondAttribute="top" id="nvr-8r-H8m"/>
-                            <constraint firstItem="6WA-kX-rGA" firstAttribute="bottom" secondItem="lg2-8C-d3S" secondAttribute="bottom" id="qaK-PP-eto"/>
+                            <constraint firstItem="6WA-kX-rGA" firstAttribute="bottom" secondItem="lg2-8C-d3S" secondAttribute="bottom" constant="8" id="qaK-PP-eto"/>
                             <constraint firstItem="6WA-kX-rGA" firstAttribute="trailing" secondItem="lg2-8C-d3S" secondAttribute="trailing" id="xXA-rz-jPo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6WA-kX-rGA"/>
                     </view>
                     <navigationItem key="navigationItem" id="fOG-pq-XSs"/>
                     <connections>
+                        <outlet property="myCoursesBtn" destination="aaz-Bq-LVv" id="bAr-37-03f"/>
                         <outlet property="resultTable" destination="lg2-8C-d3S" id="xjb-Av-5O9"/>
                         <segue destination="2ts-ld-arz" kind="show" identifier="toDetailVC" id="zLl-sh-NiX"/>
                     </connections>
