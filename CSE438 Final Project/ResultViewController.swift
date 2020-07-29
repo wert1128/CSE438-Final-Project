@@ -78,6 +78,7 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
                     let course = ResultCourse(id: id, name: name, credits: credits, description: description)
                     self.results.append(course)
                 }
+                self.results.sort(by: { $0.id < $1.id })
                 self.resultTable.reloadData()
             
               // ...

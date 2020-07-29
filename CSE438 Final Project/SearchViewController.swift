@@ -84,7 +84,9 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
                 let name = dic["name"] as! String
                 let dep = department(id: id, name: name)
                 self.departments.append(dep)
+                
             }
+            self.departments.sort(by: { $0.name < $1.name })
             self.departmentCollectionView.reloadData()
         
           // ...
