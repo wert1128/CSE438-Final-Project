@@ -61,7 +61,9 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
             let barViews = VC?.viewControllers
             let infoVC = barViews![0] as! CourseInfoViewController
             let statsVC = barViews! [1] as! StatsViewController
+            let commentVC = barViews! [2] as! CommentsViewController
             //declare a course ID variable in CourseDetailViewController, and pass the selectedCourseID to it, and that will be the ID for the selected Course
+            commentVC.courseId = selectedCourseID
             statsVC.courseId = selectedCourseID
             statsVC.departmentId = departmentID!
             infoVC.courseId = selectedCourseID
