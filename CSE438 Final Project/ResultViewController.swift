@@ -26,6 +26,9 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
     var departmentID:String?
     var results:[ResultCourse]=[]
     var selectedCourseID:String=""
+    var selectedCourseName:String=""
+    var selectedCourseCredit:String=""
+    var selectedCourseDescription:String=""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,14 +41,27 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         if segue.identifier == "toDetailVC" {
-            let VC = segue.destination as? CourseDetailViewController
-            
+            let VC = segue.destination as? UITabBarController
+            let barViews = VC?.viewControllers
+            let infoVC = barViews![0] as! CourseInfoViewController
             //declare a course ID variable in CourseDetailViewController, and pass the selectedCourseID to it, and that will be the ID for the selected Course
+            infoVC.courseId = selectedCourseID
+            infoVC.name = selectedCourseName
+            infoVC.credits = selectedCourseCredit
+            infoVC.courseDes = selectedCourseDescription
+//            print(selectedCourseID)
+//            print(selectedCourseName)
+//            print(selectedCourseCredit)
+//            print(selectedCourseDescription)
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCourseID=results[indexPath.row].id
+        selectedCourseName = results[indexPath.row].name
+        selectedCourseCredit = String(results[indexPath.row].credits)
+        selectedCourseDescription = results[indexPath.row].description
+        
         self.performSegue(withIdentifier: "toDetailVC", sender: self)
     }
     

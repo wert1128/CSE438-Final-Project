@@ -29,6 +29,9 @@
 		C01BE3CEE6D0A0523FE246B8 /* Pods_CSE438_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB807A365DA679C077FD3C /* Pods_CSE438_Final_ProjectTests.framework */; };
 		E824A42B24CA155C00DB47FD /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824A42A24CA155B00DB47FD /* CourseDetailViewController.swift */; };
 		E824A42D24CA156A00DB47FD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824A42C24CA156A00DB47FD /* Course.swift */; };
+		E89B33AA24D0CAA30024647E /* CourseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33A924D0CAA30024647E /* CourseInfoViewController.swift */; };
+		E89B33AC24D0FDF10024647E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33AB24D0FDF10024647E /* Section.swift */; };
+		E89B33AE24D1245F0024647E /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33AD24D1245F0024647E /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		DD5334C4E6CEBB70EFDDE06E /* Pods-CSE438 Final Project-CSE438 Final ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSE438 Final Project-CSE438 Final ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-CSE438 Final Project-CSE438 Final ProjectUITests/Pods-CSE438 Final Project-CSE438 Final ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E824A42A24CA155B00DB47FD /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		E824A42C24CA156A00DB47FD /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		E89B33A924D0CAA30024647E /* CourseInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoViewController.swift; sourceTree = "<group>"; };
+		E89B33AB24D0FDF10024647E /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		E89B33AD24D1245F0024647E /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSE438_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				4CB16FD124CFE9AA001D9FE2 /* Detail.storyboard */,
+				E89B33A924D0CAA30024647E /* CourseInfoViewController.swift */,
 				4CB16FCE24CFE8D2001D9FE2 /* Result.storyboard */,
 				4C6EEDDC24C9520100A2BA8B /* Search.storyboard */,
 				82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */,
@@ -173,6 +180,8 @@
 				4CB16FCC24CFDE57001D9FE2 /* ResultViewController.swift */,
 				4CB16FD424D0ABDD001D9FE2 /* ResultCourse.swift */,
 				4CB16FD624D0BB93001D9FE2 /* README.md */,
+				E89B33AB24D0FDF10024647E /* Section.swift */,
+				E89B33AD24D1245F0024647E /* StatsViewController.swift */,
 			);
 			path = "CSE438 Final Project";
 			sourceTree = "<group>";
@@ -452,10 +461,13 @@
 				4C507B3824C8BE680065CADE /* LogInViewController.swift in Sources */,
 				4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */,
 				4C507B3424C8BE680065CADE /* AppDelegate.swift in Sources */,
+				E89B33AA24D0CAA30024647E /* CourseInfoViewController.swift in Sources */,
 				4C507B7224C93E0D0065CADE /* departmentCell.swift in Sources */,
 				4CB16FD524D0ABDD001D9FE2 /* ResultCourse.swift in Sources */,
 				4C507B6E24C93DCE0065CADE /* department.swift in Sources */,
+				E89B33AE24D1245F0024647E /* StatsViewController.swift in Sources */,
 				4C507B3624C8BE680065CADE /* SceneDelegate.swift in Sources */,
+				E89B33AC24D0FDF10024647E /* Section.swift in Sources */,
 				E824A42B24CA155C00DB47FD /* CourseDetailViewController.swift in Sources */,
 				4CB16FCD24CFDE57001D9FE2 /* ResultViewController.swift in Sources */,
 			);
