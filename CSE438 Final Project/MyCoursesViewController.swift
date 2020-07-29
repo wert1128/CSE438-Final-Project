@@ -14,6 +14,7 @@ import FirebaseDatabase
 
 class MyCourseTableViewCell: UITableViewCell{
     var myCourse:ResultCourse!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
@@ -32,11 +33,10 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
     var selectedCourseName:String=""
     var selectedCourseCredit:String=""
     var selectedCourseDescription:String=""
-    var username = "Sproull"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //resultTable.register(UITableViewCell.self, forCellReuseIdentifier: "classCell")
         resultTable.dataSource = self
         resultTable.delegate=self
         
@@ -50,23 +50,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
             VC?.courseId = selectedCourseID
             VC?.departmentId = self.departmentID
         }
-//        if segue.identifier == "toEditVC" {
-//            let VC = segue.destination as? UITabBarController
-//            let barViews = VC?.viewControllers
-//            let infoVC = barViews![0] as! CourseInfoViewController
-//            let statsVC = barViews! [1] as! StatsViewController
-//            //declare a course ID variable in CourseDetailViewController, and pass the selectedCourseID to it, and that will be the ID for the selected Course
-//            statsVC.courseId = selectedCourseID
-//            statsVC.departmentId = departmentID!
-//            infoVC.courseId = selectedCourseID
-//            infoVC.name = selectedCourseName
-//            infoVC.credits = selectedCourseCredit
-//            infoVC.courseDes = selectedCourseDescription
-////            print(selectedCourseID)
-////            print(selectedCourseName)
-////            print(selectedCourseCredit)
-////            print(selectedCourseDescription)
-//        }
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,12 +73,24 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         return cell
     }
     
+    func isInstructor(_ name: String, _ instructors: String) -> Bool {
+        let arr = instructors.split(separator: ";")
+        for instructor in arr {
+            if(name == instructor) {
+                return true
+            }
+        }
+        return false
+    }
+    
     func getCourses(){
+        
         if let depID=departmentID{
             let ref = Database.database().reference().child("courses").child(depID)
             results=[]
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
+                let username = self.userdefaults.string(forKey: "name")
                 if(value==nil){
                     return
                 }
@@ -108,7 +104,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
                         continue
                     } 
                     let instructor = dic["instructor"] as! String
-                    if(instructor == self.username) {
+                    if(self.isInstructor(username!, instructor)) {
                         let course = ResultCourse(id: id, name: name, credits: credits, description: description, instructor: instructor)
                         self.results.append(course)
                     }
