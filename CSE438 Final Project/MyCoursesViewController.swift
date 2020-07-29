@@ -73,6 +73,16 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         return cell
     }
     
+    func isInstructor(_ name: String, _ instructors: String) -> Bool {
+        let arr = instructors.split(separator: ",")
+        for instructor in arr {
+            if(name == instructor) {
+                return true
+            }
+        }
+        return false
+    }
+    
     func getCourses(){
         
         if let depID=departmentID{
@@ -94,7 +104,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
                         continue
                     } 
                     let instructor = dic["instructor"] as! String
-                    if(instructor == username) {
+                    if(self.isInstructor(username!, instructor)) {
                         let course = ResultCourse(id: id, name: name, credits: credits, description: description, instructor: instructor)
                         self.results.append(course)
                     }
