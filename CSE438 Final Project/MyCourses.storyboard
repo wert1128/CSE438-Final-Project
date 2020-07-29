@@ -86,11 +86,22 @@
                     </view>
                     <connections>
                         <outlet property="resultTable" destination="FrR-oG-dyA" id="JcT-Tc-p28"/>
+                        <segue destination="7a2-J6-Lag" kind="show" identifier="toEditVC" id="G7g-jE-Hov"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXt-aX-ITH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="78"/>
+            <point key="canvasLocation" x="272" y="149"/>
+        </scene>
+        <!--CourseEdit-->
+        <scene sceneID="lSn-ek-xpp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CourseEdit" id="7a2-J6-Lag" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XiY-R3-UzT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTa-Xg-5rw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="138"/>
         </scene>
     </scenes>
 </document>

@@ -45,24 +45,27 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-        if segue.identifier == "toDetailVC" {
-            let VC = segue.destination as? UITabBarController
-            let barViews = VC?.viewControllers
-            let infoVC = barViews![0] as! CourseInfoViewController
-            let statsVC = barViews! [1] as! StatsViewController
-            //declare a course ID variable in CourseDetailViewController, and pass the selectedCourseID to it, and that will be the ID for the selected Course
-            statsVC.courseId = selectedCourseID
-            statsVC.departmentId = departmentID!
-            infoVC.courseId = selectedCourseID
-            infoVC.name = selectedCourseName
-            infoVC.credits = selectedCourseCredit
-            infoVC.courseDes = selectedCourseDescription
-//            print(selectedCourseID)
-//            print(selectedCourseName)
-//            print(selectedCourseCredit)
-//            print(selectedCourseDescription)
+        if segue.identifier == "toEditVC" {
+            let VC = segue.destination as? CourseEditController
+            VC?.courseId = selectedCourseID
         }
+//        if segue.identifier == "toEditVC" {
+//            let VC = segue.destination as? UITabBarController
+//            let barViews = VC?.viewControllers
+//            let infoVC = barViews![0] as! CourseInfoViewController
+//            let statsVC = barViews! [1] as! StatsViewController
+//            //declare a course ID variable in CourseDetailViewController, and pass the selectedCourseID to it, and that will be the ID for the selected Course
+//            statsVC.courseId = selectedCourseID
+//            statsVC.departmentId = departmentID!
+//            infoVC.courseId = selectedCourseID
+//            infoVC.name = selectedCourseName
+//            infoVC.credits = selectedCourseCredit
+//            infoVC.courseDes = selectedCourseDescription
+////            print(selectedCourseID)
+////            print(selectedCourseName)
+////            print(selectedCourseCredit)
+////            print(selectedCourseDescription)
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -71,7 +74,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         selectedCourseCredit = String(results[indexPath.row].credits)
         selectedCourseDescription = results[indexPath.row].description
         
-        //self.performSegue(withIdentifier: "toEditVC", sender: self)
+        self.performSegue(withIdentifier: "toEditVC", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

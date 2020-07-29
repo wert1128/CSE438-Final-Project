@@ -15,13 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CourseId:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyS-zL-YxY">
-                                <rect key="frame" x="106" y="205" width="74" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Grades:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzh-e1-MY7">
                                 <rect key="frame" x="106" y="302" width="100" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,15 +101,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prF-t4-gqT">
-                                <rect key="frame" x="193" y="198" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-UI-Z2p">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-UI-Z2p">
                                 <rect key="frame" x="183" y="748" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="Submit:" destination="daa-E4-26i" eventType="touchUpInside" id="wHn-VA-mZ2"/>
@@ -134,8 +120,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEr-sN-Eav">
+                                <rect key="frame" x="100" y="148" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QEr-sN-Eav" firstAttribute="centerX" secondItem="jU8-UI-Z2p" secondAttribute="centerX" id="3uh-31-bvP"/>
+                            <constraint firstItem="QEr-sN-Eav" firstAttribute="centerX" secondItem="V1X-ch-dyU" secondAttribute="centerX" id="NSB-Bn-LK3"/>
+                            <constraint firstItem="QEr-sN-Eav" firstAttribute="leading" secondItem="g8c-s7-0IF" secondAttribute="leading" constant="100" id="Ncr-hW-e2H"/>
+                            <constraint firstItem="g8c-s7-0IF" firstAttribute="trailing" secondItem="QEr-sN-Eav" secondAttribute="trailing" constant="100" id="xWL-iH-5y8"/>
+                            <constraint firstItem="QEr-sN-Eav" firstAttribute="top" secondItem="g8c-s7-0IF" secondAttribute="top" constant="104" id="xkE-fh-DY1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g8c-s7-0IF"/>
                     </view>
                     <connections>
@@ -146,7 +145,7 @@
                         <outlet property="FText" destination="UOC-jY-0Tv" id="ArA-xB-laB"/>
                         <outlet property="PText" destination="ha8-Xu-011" id="9vC-u2-uJe"/>
                         <outlet property="avgGPAText" destination="NJU-hc-dkF" id="If3-l8-3yc"/>
-                        <outlet property="courseId" destination="prF-t4-gqT" id="uc0-oD-BLy"/>
+                        <outlet property="courseNameLabel" destination="QEr-sN-Eav" id="whX-uP-QUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHk-p3-pUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
