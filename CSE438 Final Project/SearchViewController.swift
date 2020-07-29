@@ -12,9 +12,11 @@ import FirebaseDatabase
 
 class SearchViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
+    @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var departmentCollectionView: UICollectionView!
     var departments:[department]=[]
-    var selectedDepartment:String=""
+    var selectedDepartment:String?
+    var isSearch:Bool!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return departments.count
     }
@@ -39,7 +41,12 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        isSearch=false
         selectedDepartment=departments[indexPath.row].id
+        self.performSegue(withIdentifier: "toResultVC", sender: self)
+    }
+    @IBAction func search(_ sender: Any) {
+        isSearch=true
         self.performSegue(withIdentifier: "toResultVC", sender: self)
     }
     
@@ -47,8 +54,9 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
         if segue.identifier == "toResultVC" {
             let VC = segue.destination as? ResultViewController
-            
+            VC!.isSearch=isSearch
             VC!.departmentID=selectedDepartment
+            VC!.searchText=searchText.text
         }
     }
     

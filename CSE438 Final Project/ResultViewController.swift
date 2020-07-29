@@ -24,6 +24,8 @@ class ClassTableViewCell: UITableViewCell{
 class ResultViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var resultTable: UITableView!
     var departmentID:String?
+    var isSearch:Bool!
+    var searchText:String?
     var results:[ResultCourse]=[]
     var selectedCourseID:String=""
     override func viewDidLoad() {
@@ -32,7 +34,14 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
         //resultTable.register(UITableViewCell.self, forCellReuseIdentifier: "classCell")
         resultTable.dataSource = self
         resultTable.delegate=self
-        getCourses()
+        if(isSearch){
+            if(searchText != nil && searchText != ""){
+                search(text: searchText!)
+            }
+        }else{
+            getCourses()
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,7 +68,39 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
         cell.update()
         return cell
     }
-    
+    func search(text:String){
+        let ref = Database.database().reference().child("courses")
+        results=[]
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if(value==nil){
+                return
+            }
+            for dep in value!{
+                let courses = dep.value as!NSDictionary
+                for course in courses{
+                    let id = course.key as! String
+                    let dic = course.value as! NSDictionary
+                    let name = dic["name"] as! String
+                    let credits = dic["unit"] as! Int
+                    let description = dic["description"] as! String
+                    let course = ResultCourse(id: id, name: name, credits: credits, description: description)
+                    if (name.contains(text)){
+                        self.results.append(course)
+                    }
+                    
+                }
+                
+            }
+            self.results.sort(by: { $0.id < $1.id })
+            self.resultTable.reloadData()
+        
+          // ...
+          }) { (error) in
+            
+            print(error.localizedDescription)
+        }
+    }
     func getCourses(){
         if let depID=departmentID{
             let ref = Database.database().reference().child("courses").child(depID)

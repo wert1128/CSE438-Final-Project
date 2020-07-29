@@ -80,6 +80,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJr-Q8-bfN">
                                 <rect key="frame" x="311" y="62" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="WOt-QE-BES" eventType="touchUpInside" id="8sK-ag-9CP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -101,6 +104,7 @@
                     <navigationItem key="navigationItem" id="bIm-HK-qH7"/>
                     <connections>
                         <outlet property="departmentCollectionView" destination="AtL-jL-BLU" id="WfC-Nl-K7a"/>
+                        <outlet property="searchText" destination="anT-Cc-2bW" id="nO6-Du-lrY"/>
                         <segue destination="DoA-Ea-R98" kind="show" identifier="toResultVC" id="cFn-wJ-Pi8"/>
                     </connections>
                 </viewController>
