@@ -14,6 +14,7 @@ import FirebaseDatabase
 
 class MyCourseTableViewCell: UITableViewCell{
     var myCourse:ResultCourse!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
@@ -32,7 +33,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
     var selectedCourseName:String=""
     var selectedCourseCredit:String=""
     var selectedCourseDescription:String=""
-    var username = "Sproull"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,11 +91,13 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     func getCourses(){
+        
         if let depID=departmentID{
             let ref = Database.database().reference().child("courses").child(depID)
             results=[]
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
+                let username = self.userdefaults.string(forKey: "name")
                 if(value==nil){
                     return
                 }
@@ -108,7 +111,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
                         continue
                     } 
                     let instructor = dic["instructor"] as! String
-                    if(instructor == self.username) {
+                    if(instructor == username) {
                         let course = ResultCourse(id: id, name: name, credits: credits, description: description, instructor: instructor)
                         self.results.append(course)
                     }
