@@ -70,6 +70,14 @@ class LogInViewController: UIViewController {
                 userdefault.set(false, forKey: "isStudent")
                 userdefault.set(name, forKey: "name")
             }
+            if(name == "" && option == "Professor Log In") {
+                let alert = UIAlertController(title: "Error", message: "Professor must provide a real name", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+                return
+            }
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
                 //var user = authResult?.user
                 if(error != nil) {
