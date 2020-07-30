@@ -17,6 +17,8 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     var departments:[department]=[]
     var selectedDepartment:String?
     var isSearch:Bool!
+    let util = Util()
+    let defaults = UserDefaults.standard
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return departments.count
     }
@@ -70,7 +72,9 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         departmentCollectionView.register(departmentCell.self, forCellWithReuseIdentifier: "Cell")
         departmentCollectionView.isUserInteractionEnabled = true
         getDepartments(school:"A&S")
+        util.getCurrentName()
         // Do any additional setup after loading the view.
+        //print(defaults.string(forKey: "name")!)
         
     }
     

@@ -23,18 +23,7 @@ class Util {
             }
             let name = value!["realname"] as! String
             self.defaults.setValue(name, forKey: "name")
-//            for dep in value!{
-//                let id = dep.key as! String
-//                let dic = dep.value as! NSDictionary
-//                let name = dic["name"] as! String
-//                let dep = department(id: id, name: name)
-//                self.departments.append(dep)
-//
-//            }
-//            self.departments.sort(by: { $0.name < $1.name })
-//            self.departmentCollectionView.reloadData()
-        
-          // ...
+            
           }) { (error) in
             
             print(error.localizedDescription)
