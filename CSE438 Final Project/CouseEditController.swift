@@ -24,11 +24,38 @@ class CourseEditController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let text = self.departmentId! + self.courseId!
-        courseNameLabel.text = text
+        findDep()
+        //let text = self.departmentId! + self.courseId!
+        //courseNameLabel.text = text
         //print(self.courseId ?? "")
     }
     
+    func findDep(){
+        let ref = Database.database().reference().child("courses")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if(value==nil){
+                return
+            }
+            for dep in value!{
+                let courses = dep.value as!NSDictionary
+                let depID=dep.key as! String
+                for course in courses{
+                    let id = course.key as! String
+                    if(id==self.courseId!){
+                        self.departmentId=depID
+                    }
+                }
+                
+            }
+            self.courseNameLabel.text=self.departmentId! + self.courseId!
+        
+          // ...
+          }) { (error) in
+            
+            print(error.localizedDescription)
+        }
+    }
     
     @IBAction func Submit(_ sender: Any) {
         var courseDict: [String: Any] = [:]
@@ -60,9 +87,13 @@ class CourseEditController: UIViewController {
         childRef.setValue(courseDict) {
           (error:Error?, ref:DatabaseReference) in
           if let error = error {
-            print("Data except GPA could not be saved: \(error).")
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
           } else {
-            print("Data except GPA saved successfully!")
+            self.navigationController?.popViewController(animated: true)
           }
         }
         

@@ -14,6 +14,9 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var departmentCollectionView: UICollectionView!
+    @IBOutlet weak var myCoursesButton: UIButton!
+    let userdefaults = UserDefaults.standard
+    var isStudent = true
     var departments:[department]=[]
     var selectedDepartment:String?
     var isSearch:Bool!
@@ -52,6 +55,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         self.performSegue(withIdentifier: "toResultVC", sender: self)
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         if segue.identifier == "toResultVC" {
@@ -73,6 +77,10 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         departmentCollectionView.isUserInteractionEnabled = true
         getDepartments(school:"A&S")
         util.getCurrentName()
+        isStudent = userdefaults.bool(forKey: "isStudent")
+        if(isStudent) {
+            myCoursesButton.isHidden = true
+        }
         // Do any additional setup after loading the view.
         //print(defaults.string(forKey: "name")!)
         

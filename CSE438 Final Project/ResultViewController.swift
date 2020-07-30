@@ -22,9 +22,8 @@ class ClassTableViewCell: UITableViewCell{
     }
 }
 class ResultViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
-    @IBOutlet weak var myCoursesBtn: UIButton!
     @IBOutlet weak var resultTable: UITableView!
-    let userdefaults = UserDefaults.standard
+    //let userdefaults = UserDefaults.standard
     var departmentID:String?
     var isSearch:Bool!
     var searchText:String?
@@ -33,7 +32,7 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
     var selectedCourseName:String=""
     var selectedCourseCredit:String=""
     var selectedCourseDescription:String=""
-    var isStudent = true
+    //var isStudent = true
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,10 +47,7 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
             getCourses()
         }
         
-        isStudent = userdefaults.bool(forKey: "isStudent")
-        if(isStudent) {
-            myCoursesBtn.isHidden = true
-        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,10 +71,10 @@ class ResultViewController: UIViewController,UITableViewDataSource, UITableViewD
 //            print(selectedCourseCredit)
 //            print(selectedCourseDescription)
         }
-        else if(segue.identifier == "toMyCoursesVC") {
+        /*else if(segue.identifier == "toMyCoursesVC") {
             let VC = segue.destination as? MyCoursesViewController
             VC!.departmentID = self.departmentID
-        }
+        }*/
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -27,7 +27,7 @@ class MyCourseTableViewCell: UITableViewCell{
 class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var resultTable: UITableView!
     let userdefaults = UserDefaults.standard
-    var departmentID:String?
+//    var departmentID:String?
     var results: [ResultCourse] = []
     var selectedCourseID:String=""
     var selectedCourseName:String=""
@@ -40,7 +40,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         resultTable.dataSource = self
         resultTable.delegate=self
         
-        getCourses()
+        getMyCourses()
         
     }
     
@@ -48,7 +48,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         if segue.identifier == "toEditVC" {
             let VC = segue.destination as? CourseEditController
             VC?.courseId = selectedCourseID
-            VC?.departmentId = self.departmentID
+            //VC?.departmentId = self.departmentID
         }
 
     }
@@ -83,18 +83,18 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
         return false
     }
     
-    func getCourses(){
-        
-        if let depID=departmentID{
-            let ref = Database.database().reference().child("courses").child(depID)
-            results=[]
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSDictionary
-                let username = self.userdefaults.string(forKey: "name")
-                if(value==nil){
-                    return
-                }
-                for course in value!{
+    func getMyCourses(){
+        let ref = Database.database().reference().child("courses")
+        results=[]
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let username = self.userdefaults.string(forKey: "name")
+            if(value==nil){
+                return
+            }
+            for dep in value!{
+                let courses = dep.value as!NSDictionary
+                for course in courses{
                     let id = course.key as! String
                     let dic = course.value as! NSDictionary
                     let name = dic["name"] as! String
@@ -102,7 +102,7 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
                     let description = dic["description"] as! String
                     if(dic["instructor"] == nil) {
                         continue
-                    } 
+                    }
                     let instructor = dic["instructor"] as! String
                     if(self.isInstructor(username!, instructor)) {
                         let course = ResultCourse(id: id, name: name, credits: credits, description: description, instructor: instructor)
@@ -110,14 +110,15 @@ class MyCoursesViewController: UIViewController,UITableViewDataSource, UITableVi
                     }
                     
                 }
-                self.results.sort(by: { $0.id < $1.id })
-                self.resultTable.reloadData()
-            
-              // ...
-              }) { (error) in
                 
-                print(error.localizedDescription)
             }
+            self.results.sort(by: { $0.id < $1.id })
+            self.resultTable.reloadData()
+        
+          // ...
+          }) { (error) in
+            
+            print(error.localizedDescription)
         }
         
         

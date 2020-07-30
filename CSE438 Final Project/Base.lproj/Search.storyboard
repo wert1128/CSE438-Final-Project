@@ -25,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AtL-jL-BLU">
-                                <rect key="frame" x="10" y="114" width="355" height="612"/>
+                                <rect key="frame" x="10" y="114" width="355" height="583"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6K-0N-1m9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -84,14 +84,23 @@
                                     <action selector="search:" destination="WOt-QE-BES" eventType="touchUpInside" id="8sK-ag-9CP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-xC-mGE">
+                                <rect key="frame" x="131.66666666666666" y="710" width="112" height="30"/>
+                                <state key="normal" title="Edit My Courses"/>
+                                <connections>
+                                    <segue destination="bDQ-jr-pEs" kind="show" id="FxQ-7A-I9N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="AtL-jL-BLU" firstAttribute="top" secondItem="anT-Cc-2bW" secondAttribute="bottom" constant="20" id="05h-ad-SGM"/>
+                            <constraint firstItem="U7K-xC-mGE" firstAttribute="centerX" secondItem="AMC-NU-s9l" secondAttribute="centerX" id="2Zm-04-wGE"/>
                             <constraint firstItem="anT-Cc-2bW" firstAttribute="centerY" secondItem="YJr-Q8-bfN" secondAttribute="centerY" id="9aQ-nk-Du9"/>
                             <constraint firstItem="anT-Cc-2bW" firstAttribute="top" secondItem="AMC-NU-s9l" secondAttribute="top" constant="16" id="BwY-9y-5gQ"/>
-                            <constraint firstItem="FFj-jO-szo" firstAttribute="top" secondItem="AtL-jL-BLU" secondAttribute="bottom" constant="22" id="OLg-it-pCR"/>
+                            <constraint firstItem="FFj-jO-szo" firstAttribute="top" secondItem="U7K-xC-mGE" secondAttribute="bottom" constant="8" id="NqG-2Q-aJy"/>
                             <constraint firstItem="AtL-jL-BLU" firstAttribute="leading" secondItem="AMC-NU-s9l" secondAttribute="leading" constant="10" id="PP3-ml-Ctd"/>
+                            <constraint firstItem="U7K-xC-mGE" firstAttribute="top" secondItem="AtL-jL-BLU" secondAttribute="bottom" constant="13" id="UyS-hp-ZgO"/>
                             <constraint firstItem="anT-Cc-2bW" firstAttribute="leading" secondItem="AMC-NU-s9l" secondAttribute="leading" constant="16" id="VmL-ey-p69"/>
                             <constraint firstItem="FFj-jO-szo" firstAttribute="centerX" secondItem="AMC-NU-s9l" secondAttribute="centerX" id="WMe-eI-AEx"/>
                             <constraint firstItem="YJr-Q8-bfN" firstAttribute="leading" secondItem="anT-Cc-2bW" secondAttribute="trailing" constant="8" id="Wch-cm-D8p"/>
@@ -104,13 +113,24 @@
                     <navigationItem key="navigationItem" id="bIm-HK-qH7"/>
                     <connections>
                         <outlet property="departmentCollectionView" destination="AtL-jL-BLU" id="WfC-Nl-K7a"/>
+                        <outlet property="myCoursesButton" destination="U7K-xC-mGE" id="oDJ-O3-PVC"/>
                         <outlet property="searchText" destination="anT-Cc-2bW" id="nO6-Du-lrY"/>
                         <segue destination="DoA-Ea-R98" kind="show" identifier="toResultVC" id="cFn-wJ-Pi8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w06-P8-NRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="-167"/>
+            <point key="canvasLocation" x="197.59999999999999" y="-167.73399014778326"/>
+        </scene>
+        <!--MyCourses-->
+        <scene sceneID="7DM-Gr-fdu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyCourses" id="bDQ-jr-pEs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UZk-Rg-uks"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oH-uH-ahb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="-195"/>
         </scene>
         <!--Result-->
         <scene sceneID="2ob-zn-W6T">

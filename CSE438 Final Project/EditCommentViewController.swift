@@ -25,9 +25,9 @@ class EditCommentViewController: UIViewController {
         // Do any additional setup after loading the view.
         username = UserDefaults.standard.string(forKey: "username")!
         realname = UserDefaults.standard.string(forKey: "name")!
-        print(realname)
+        /*print(realname)
         print(username)
-        print(courseId!)
+        print(courseId!)*/
         checkBox = Checkbox(frame: CGRect(x: 340, y: 438, width: 21, height: 21))
         self.view.addSubview(checkBox)
     }
