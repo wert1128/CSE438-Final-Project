@@ -16,6 +16,7 @@ class EditCommentViewController: UIViewController {
     @IBOutlet weak var content: UITextView!
     var courseId:String?
     var username:String = ""
+    var realname:String = ""
     let ref = Database.database().reference(withPath: "comments")
     var checkBox:Checkbox!
     
@@ -23,6 +24,8 @@ class EditCommentViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         username = UserDefaults.standard.string(forKey: "username")!
+        realname = UserDefaults.standard.string(forKey: "name")!
+        print(realname)
         print(username)
         print(courseId!)
         checkBox = Checkbox(frame: CGRect(x: 340, y: 438, width: 21, height: 21))
@@ -35,7 +38,7 @@ class EditCommentViewController: UIViewController {
         if checkBox.isChecked{
             commentDict.updateValue("Anonymous", forKey: "username")
         }else{
-            commentDict.updateValue(username, forKey: "username")
+            commentDict.updateValue(realname, forKey: "username")
         }
         commentDict.updateValue(courseId!, forKey: "courseId")
         if content.text != nil && content.text != "" {
