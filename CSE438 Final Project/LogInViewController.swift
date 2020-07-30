@@ -81,7 +81,7 @@ class LogInViewController: UIViewController {
         } else if(option == "Student Sign Up" || option == "Professor Sign Up") {
             //userdefault.set(name, forKey: "name")
             if(name == "") {
-                let alert = UIAlertController(title: "Error", message: "Professor must provide a real name", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Must provide a real name", preferredStyle: .alert)
 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
