@@ -29,22 +29,5 @@ class Util {
             print(error.localizedDescription)
         }
     }
-    func getCurrentRole() {
-        let userID = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference().child("users").child(userID!)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-          // Get user value
-            let value = snapshot.value as? NSDictionary
-            if(value==nil){
-                return
-            }
-            let name = value!["role"] as! String
-            let check = name == "student" ? true : false
-            self.defaults.setValue(check, forKey: "isStudent")
-            
-          }) { (error) in
-            
-            print(error.localizedDescription)
-        }
-    }
+    
 }

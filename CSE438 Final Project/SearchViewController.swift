@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class SearchViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
@@ -65,6 +66,28 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
             VC!.searchText=searchText.text
         }
     }
+    func getCurrentRole() {
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("users").child(userID!)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+            let value = snapshot.value as? NSDictionary
+            if(value==nil){
+                return
+            }
+            let name = value!["role"] as! String
+            let check = name == "student" ? true : false
+            self.defaults.setValue(check, forKey: "isStudent")
+            self.isStudent = self.userdefaults.bool(forKey: "isStudent")
+            if(self.isStudent) {
+                self.myCoursesButton.isHidden = true
+            }
+            
+          }) { (error) in
+            
+            print(error.localizedDescription)
+        }
+    }
     
     
 
@@ -77,11 +100,8 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         departmentCollectionView.isUserInteractionEnabled = true
         getDepartments(school:"A&S")
         util.getCurrentName()
-        util.getCurrentRole()
-        isStudent = userdefaults.bool(forKey: "isStudent")
-        if(isStudent) {
-            myCoursesButton.isHidden = true
-        }
+        getCurrentRole()
+        
         // Do any additional setup after loading the view.
         //print(defaults.string(forKey: "name")!)
         
