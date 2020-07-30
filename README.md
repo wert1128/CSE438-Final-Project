@@ -10,6 +10,7 @@
   3. IMPORTANT!!! The Computer Science Department and the African Studies Department are the two department that are data-complete. Use them for your testing.
   4. Upvoting and downvoting comments do not take into account of who has voted, so it is there more for the comment sorting functionality.
   5. Because we cannot confirm the identity of the professor for now, the professor authority is abusable.
+  6. You can delete comments of people who share your name. This is a known problem.
   
 # Usage:
 To use this project, clone the repo, and cd to the directory of this repo and in terminal.
