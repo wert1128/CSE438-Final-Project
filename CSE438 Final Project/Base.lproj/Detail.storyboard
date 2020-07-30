@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vek-Ka-D2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600.8000000000002" y="1525.8620689655172"/>
+            <point key="canvasLocation" x="623" y="1216"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Sn3-7n-eki">
@@ -157,7 +157,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKY-lp-rqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3698" y="526"/>
+            <point key="canvasLocation" x="1894" y="263"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="Bj1-rp-qX4">
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fx7-6P-t0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3352.8000000000002" y="1525.8620689655172"/>
+            <point key="canvasLocation" x="1553" y="1216"/>
         </scene>
         <!--Comments-->
         <scene sceneID="c3e-w4-bAy">
@@ -406,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6w-oG-HjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4148" y="1525.8620689655172"/>
+            <point key="canvasLocation" x="2561" y="1180"/>
         </scene>
         <!--Edit Comment View Controller-->
         <scene sceneID="W2f-1t-UBL">
@@ -432,6 +432,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anonymous" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXr-34-nmk">
+                                <rect key="frame" x="245" y="438" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="op2-9Q-veA"/>
@@ -443,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9Z-u0-dbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4983.1999999999998" y="1525.8620689655172"/>
+            <point key="canvasLocation" x="3580" y="1179"/>
         </scene>
     </scenes>
     <resources>

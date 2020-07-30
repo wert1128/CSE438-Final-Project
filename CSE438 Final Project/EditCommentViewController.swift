@@ -17,6 +17,7 @@ class EditCommentViewController: UIViewController {
     var courseId:String?
     var username:String = ""
     let ref = Database.database().reference(withPath: "comments")
+    var checkBox:Checkbox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,18 @@ class EditCommentViewController: UIViewController {
         username = UserDefaults.standard.string(forKey: "username")!
         print(username)
         print(courseId!)
+        checkBox = Checkbox(frame: CGRect(x: 340, y: 438, width: 21, height: 21))
+        self.view.addSubview(checkBox)
     }
     @IBAction func publishAction(_ sender: Any) {
         var commentDict:[String:Any] = [:]
         commentDict.updateValue(0, forKey: "likes")
         commentDict.updateValue(0, forKey: "dislikes")
-        commentDict.updateValue(username, forKey: "username")
+        if checkBox.isChecked{
+            commentDict.updateValue("Anonymous", forKey: "username")
+        }else{
+            commentDict.updateValue(username, forKey: "username")
+        }
         commentDict.updateValue(courseId!, forKey: "courseId")
         if content.text != nil && content.text != "" {
             commentDict.updateValue(content.text!, forKey: "content")
