@@ -77,6 +77,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         departmentCollectionView.isUserInteractionEnabled = true
         getDepartments(school:"A&S")
         util.getCurrentName()
+        util.getCurrentRole()
         isStudent = userdefaults.bool(forKey: "isStudent")
         if(isStudent) {
             myCoursesButton.isHidden = true
