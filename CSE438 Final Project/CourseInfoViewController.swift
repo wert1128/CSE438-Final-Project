@@ -47,25 +47,39 @@ class CourseInfoViewController: UIViewController {
             let secRef = ref.child(courId)
             theSections = []
             secRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                print(snapshot.value!)
               let value = snapshot.value as? NSDictionary
-              if(value==nil){
+                let value1 = snapshot.value as? NSMutableArray
+              if(value==nil && value1 == nil){
                   print("no result")
                   return
-              }
-              for section in value!{
-                  let id = section.key as! String
-                  let dic = section.value as! NSDictionary
-                  let day = dic["day"] as! String
-                  let instructor = dic["instructor"] as! String
-                  let location = dic["location"] as! String
-                  let seats = dic["seats"] as! Int
-                  let time = dic["time"] as! String
-                  let aSection = Section(id: id, day: day, instructor: instructor, location: location, seats: seats, time: time)
-                  self.theSections.append(aSection)
-                //print(self.theSections)
-                
-              }
+              }else if(value1 == nil){
+                for section in value!{
+                    let id = section.key as! String
+                    let dic = section.value as! NSDictionary
+                    let day = dic["day"] as! String
+                    let instructor = dic["instructor"] as! String
+                    let location = dic["location"] as! String
+                    let seats = dic["seats"] as! Int
+                    let time = dic["time"] as! String
+                    let aSection = Section(id: id, day: day, instructor: instructor, location: location, seats: seats, time: time)
+                    self.theSections.append(aSection)
+                  //print(self.theSections)
+                  
+                }
+                  self.setupSectionInfos()
+              }else if(value == nil){
+                let dic = value1![1] as! NSDictionary
+                let day = dic["day"] as! String
+                let instructor = dic["instructor"] as! String
+                let location = dic["location"] as! String
+                let seats = dic["seats"] as! Int
+                let time = dic["time"] as! String
+                let aSection = Section(id: "1", day: day, instructor: instructor, location: location, seats: seats, time: time)
+                self.theSections.append(aSection)
                 self.setupSectionInfos()
+                }
+              
               }) { (error) in
                 print(error.localizedDescription)
             }
