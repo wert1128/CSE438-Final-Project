@@ -33,15 +33,27 @@ class EditCommentViewController: UIViewController {
         commentDict.updateValue(courseId!, forKey: "courseId")
         if content.text != nil && content.text != "" {
             commentDict.updateValue(content.text!, forKey: "content")
+        }else{
+            let alert = UIAlertController(title: "Reminder", message: "The comment cannot be empty", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
+            return
         }
         let identifier = UUID()
         let commentRef = ref.child("\(identifier)")
         commentRef.setValue(commentDict) {
           (error:Error?, ref:DatabaseReference) in
           if let error = error {
-            print("Data except GPA could not be saved: \(error).")
+            print("Data could not be saved: \(error).")
+            let alert = UIAlertController(title: "Fail", message: "Some error ocurred during publishing", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
           } else {
-            print("Data except GPA saved successfully!")
+            print("data upload successfully")
             self.navigationController?.popViewController(animated: true)
           }
         }
