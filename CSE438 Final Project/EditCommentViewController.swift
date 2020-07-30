@@ -42,6 +42,7 @@ class EditCommentViewController: UIViewController {
             print("Data except GPA could not be saved: \(error).")
           } else {
             print("Data except GPA saved successfully!")
+            self.navigationController?.popViewController(animated: true)
           }
         }
     }

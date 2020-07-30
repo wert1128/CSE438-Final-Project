@@ -76,7 +76,7 @@ class CourseInfoViewController: UIViewController {
         //print(theSections)
         var items:[String] = []
         for aSection in theSections{
-            items.append(aSection.id)
+            items.append("Section "+aSection.id)
         }
         print(items)
         let customSC = UISegmentedControl(items: items)

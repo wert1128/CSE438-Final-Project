@@ -29,7 +29,12 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let theCell = tableView.dequeueReusableCell(withIdentifier: "theCommentCell", for: indexPath) as! CommentsTableViewCell
         theCell.theComment = theComments[indexPath.row]
-        theCell.username.text = theComments[indexPath.row].username
+        let aIndex = theComments[indexPath.row].username.firstIndex(of: "@")
+        if let theIndex = aIndex{
+            theCell.username.text = theComments[indexPath.row].username.substring(to: theIndex)
+        }else{
+            theCell.username.text = theComments[indexPath.row].username
+        }
         theCell.content.text = theComments[indexPath.row].content
         theCell.likes.text = "\(theComments[indexPath.row].likes)"
         theCell.dislikes.text = "\(theComments[indexPath.row].dislikes)"
