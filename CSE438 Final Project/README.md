@@ -1,6 +1,6 @@
 #  Group Rate My Courses
 
-Student IDs: 474206,
+Student IDs: 474206, 472956
 
 TO DO:
 Professor Interface
