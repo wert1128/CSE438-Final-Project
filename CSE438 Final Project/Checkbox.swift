@@ -2,6 +2,8 @@
 //  Checkbox.swift
 //  CheckboxDemo
 //
+// This checkbox file credit to https://github.com/BeauNouvelle/SimpleCheckbox.git
+
 
 import Foundation
 import UIKit

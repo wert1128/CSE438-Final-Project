@@ -69,6 +69,7 @@ class CommentsTableViewCell: UITableViewCell {
     }
 }
 
+//The idea of this delegate credits to https://stackoverflow.com/questions/46199727/reload-uitableview-when-button-clicked-in-custom-uitableviewcell
 protocol CommentsTableCellDelegate: class {
     func deleteButtonPressed()
 }
