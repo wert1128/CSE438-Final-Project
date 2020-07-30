@@ -38,6 +38,7 @@
 		E89B33BF24D221560024647E /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33BE24D221560024647E /* CommentsTableViewCell.swift */; };
 		E89B33C324D223600024647E /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33C224D223600024647E /* CommentsViewController.swift */; };
 		E89B33C524D227130024647E /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33C424D227130024647E /* EditCommentViewController.swift */; };
+		E89B33C724D2544E0024647E /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89B33C624D2544E0024647E /* Checkbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		E89B33BE24D221560024647E /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		E89B33C224D223600024647E /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		E89B33C424D227130024647E /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
+		E89B33C624D2544E0024647E /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		EB7FE128E03F3C6FFD1A05AE /* Pods_CSE438_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSE438_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 				E89B33A924D0CAA30024647E /* CourseInfoViewController.swift */,
 				4CB16FCE24CFE8D2001D9FE2 /* Result.storyboard */,
 				82537FDF24C90E1400AA867E /* CSE438 Final Project.entitlements */,
+				E89B33C624D2544E0024647E /* Checkbox.swift */,
 				4C6EEDDC24C9520100A2BA8B /* Search.storyboard */,
 				E89B33B424D1F8930024647E /* CourseEdit.storyboard */,
 				4C507B3324C8BE680065CADE /* AppDelegate.swift */,
@@ -479,6 +482,7 @@
 			files = (
 				4C507B3824C8BE680065CADE /* LogInViewController.swift in Sources */,
 				4C507B6424C8BF560065CADE /* SearchViewController.swift in Sources */,
+				E89B33C724D2544E0024647E /* Checkbox.swift in Sources */,
 				4C507B3424C8BE680065CADE /* AppDelegate.swift in Sources */,
 				828C62AD24D202F800407C07 /* MyCoursesViewController.swift in Sources */,
 				E89B33AA24D0CAA30024647E /* CourseInfoViewController.swift in Sources */,
