@@ -39,12 +39,12 @@ class LogInViewController: UIViewController {
         }else{
             submitButton.setTitle("Sign Up", for: .normal)
         }
-        if(title == "Student Log In" || title == "Student Sign Up" || title == "Professor Sign Up") {
-            nameLabel.isHidden = true
-            nameTextField.isHidden = true
-        } else {
+        if(title == "Student Sign Up" || title == "Professor Sign Up") {
             nameLabel.isHidden = false
             nameTextField.isHidden = false
+        } else {
+            nameLabel.isHidden = true
+            nameTextField.isHidden = true
         }
         optionButton.setTitle(title, for: .normal)
         for button in options{
@@ -68,16 +68,9 @@ class LogInViewController: UIViewController {
                 userdefault.set(true, forKey: "isStudent")
             } else {
                 userdefault.set(false, forKey: "isStudent")
-                userdefault.set(name, forKey: "name")
+                
             }
-            if(name == "" && option == "Professor Log In") {
-                let alert = UIAlertController(title: "Error", message: "Professor must provide a real name", preferredStyle: .alert)
 
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
-                self.present(alert, animated: true)
-                return
-            }
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
                 //var user = authResult?.user
                 if(error != nil) {
@@ -92,6 +85,15 @@ class LogInViewController: UIViewController {
                 self.performSegue(withIdentifier: "signInToSearchVC", sender: nil)
             }
         } else if(option == "Student Sign Up" || option == "Professor Sign Up") {
+            //userdefault.set(name, forKey: "name")
+            if(name == "") {
+                let alert = UIAlertController(title: "Error", message: "Professor must provide a real name", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+                return
+            }
             Auth.auth().createUser(withEmail: username, password: password) { authResult, error in
                 if(error != nil) {
                     let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
@@ -107,7 +109,7 @@ class LogInViewController: UIViewController {
                 let usersReference = ref.child("users")
                 let userId = user?.uid
                 let newUserReference = usersReference.child(userId!)
-                newUserReference.setValue(["username": self.usernameTextField.text!, "role": (self.option == "Student Sign Up" ? "student" : "professor")])
+                newUserReference.setValue(["username": self.usernameTextField.text!, "role": (self.option == "Student Sign Up" ? "student" : "professor"), "realname": name])
                 
                 let alert = UIAlertController(title: "Success", message: nil, preferredStyle: .alert)
 
