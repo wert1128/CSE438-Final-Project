@@ -97,6 +97,16 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
                         self.theComments.append(aComment)
                     }
                 }
+                let n = self.theComments.count
+                for i in 0 ..< n-1 {
+                    for j in 0 ..< n-i-1{
+                        if self.theComments[j].likes < self.theComments[j+1].likes {
+                            let temp = self.theComments[j]
+                            self.theComments[j] = self.theComments[j+1]
+                            self.theComments[j+1] = temp
+                        }
+                    }
+                }
                 print(self.theComments)
                 self.tableView.reloadData()
               }) { (error) in
