@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hVH-e9-z2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hVH-e9-z2z">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,12 +111,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-Ic-7dC">
-                                <rect key="frame" x="48.333333333333343" y="440.33333333333331" width="41" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffZ-WB-gWD">
                                 <rect key="frame" x="57.999999999999993" y="486.33333333333331" width="78.333333333333314" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -158,6 +152,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-Ic-7dC">
+                                <rect key="frame" x="70" y="438" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -167,7 +167,7 @@
                             <constraint firstItem="pJS-PS-9Yg" firstAttribute="leading" secondItem="ffZ-WB-gWD" secondAttribute="trailing" constant="7.6666666666666856" id="FYA-KX-oPi"/>
                             <constraint firstItem="70X-j6-yI5" firstAttribute="trailing" secondItem="Kg3-5l-olD" secondAttribute="trailing" constant="47" id="JFw-5Y-mKr"/>
                             <constraint firstItem="Kns-Sk-Ihp" firstAttribute="top" secondItem="70X-j6-yI5" secondAttribute="top" id="NWf-pj-jMA"/>
-                            <constraint firstItem="RjB-Ic-7dC" firstAttribute="leading" secondItem="70X-j6-yI5" secondAttribute="leading" constant="48.333333333333336" id="WTs-Ah-kwT"/>
+                            <constraint firstItem="RjB-Ic-7dC" firstAttribute="leading" secondItem="70X-j6-yI5" secondAttribute="leading" constant="70" id="WTs-Ah-kwT"/>
                             <constraint firstItem="ffZ-WB-gWD" firstAttribute="leading" secondItem="70X-j6-yI5" secondAttribute="leading" constant="58" id="WfN-u1-8iR"/>
                             <constraint firstItem="I4X-ws-WLE" firstAttribute="top" secondItem="MyE-gp-T1A" secondAttribute="bottom" constant="180" id="WwX-1W-LKh"/>
                             <constraint firstItem="Kg3-5l-olD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RjB-Ic-7dC" secondAttribute="trailing" constant="8" symbolic="YES" id="anJ-ZS-Zue"/>
@@ -175,7 +175,7 @@
                             <constraint firstItem="Kns-Sk-Ihp" firstAttribute="leading" secondItem="70X-j6-yI5" secondAttribute="leading" id="j58-Ns-7ra"/>
                             <constraint firstItem="Kg3-5l-olD" firstAttribute="top" secondItem="I4X-ws-WLE" secondAttribute="bottom" constant="100" id="mpm-CN-YzK"/>
                             <constraint firstItem="pJS-PS-9Yg" firstAttribute="centerX" secondItem="Kg3-5l-olD" secondAttribute="centerX" id="pEk-tt-oBO"/>
-                            <constraint firstItem="RjB-Ic-7dC" firstAttribute="centerY" secondItem="Kg3-5l-olD" secondAttribute="centerY" id="ptT-pR-8iC"/>
+                            <constraint firstItem="RjB-Ic-7dC" firstAttribute="centerY" secondItem="Kg3-5l-olD" secondAttribute="centerY" constant="-2.3333333333333144" id="ptT-pR-8iC"/>
                             <constraint firstItem="pJS-PS-9Yg" firstAttribute="top" secondItem="Kg3-5l-olD" secondAttribute="bottom" constant="12" id="yaT-F1-3y4"/>
                             <constraint firstItem="70X-j6-yI5" firstAttribute="trailing" secondItem="Kns-Sk-Ihp" secondAttribute="trailing" id="zfN-Xc-l1y"/>
                             <constraint firstItem="I4X-ws-WLE" firstAttribute="centerX" secondItem="70X-j6-yI5" secondAttribute="centerX" id="zzd-Kz-GoP"/>
