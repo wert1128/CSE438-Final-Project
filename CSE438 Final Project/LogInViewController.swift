@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 class LogInViewController: UIViewController {
     let userdefault = UserDefaults.standard
+    let util = Util()
     @IBOutlet weak var optionButton: UIButton!
     @IBOutlet var options: [UIButton]!
     @IBOutlet weak var submitButton: UIButton!
@@ -19,7 +20,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
-    var option: String = "Student Log In"
+    var option: String = "Log In"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,7 +35,7 @@ class LogInViewController: UIViewController {
             return
         }
         self.option = title
-        if(title=="Student Log In"||title == "Professor Log In"){
+        if(title=="Log In"){
             submitButton.setTitle("Log In", for: .normal)
         }else{
             submitButton.setTitle("Sign Up", for: .normal)
@@ -63,13 +64,7 @@ class LogInViewController: UIViewController {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
         let name: String = self.nameTextField.text ?? ""
-        if(option == "Student Log In" || option == "Professor Log In") {
-            if(option == "Student Log In") {
-                userdefault.set(true, forKey: "isStudent")
-            } else {
-                userdefault.set(false, forKey: "isStudent")
-                
-            }
+        if(option == "Log In") {
 
             Auth.auth().signIn(withEmail: username, password: password) { (authResult, error) in
                 //var user = authResult?.user
@@ -81,7 +76,6 @@ class LogInViewController: UIViewController {
                     self.present(alert, animated: true)
                     return
                 }
-                self.userdefault.set(username, forKey: "username")
                 self.performSegue(withIdentifier: "signInToSearchVC", sender: nil)
             }
         } else if(option == "Student Sign Up" || option == "Professor Sign Up") {

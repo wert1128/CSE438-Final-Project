@@ -48,30 +48,17 @@
                                             <action selector="seeOptions:" destination="ASZ-Ni-ZbP" eventType="touchUpInside" id="MpN-9O-ZVx"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OST-Ce-ggb">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OST-Ce-ggb" userLabel="Log In">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Ofo-ZL-4by"/>
                                         </constraints>
-                                        <state key="normal" title="Student Log In">
+                                        <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="optionSelected:" destination="ASZ-Ni-ZbP" eventType="touchUpInside" id="0Fn-vd-4on"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnt-b5-cJC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="v7q-8R-nTF"/>
-                                        </constraints>
-                                        <state key="normal" title="Professor Log In">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="optionSelected:" destination="ASZ-Ni-ZbP" eventType="touchUpInside" id="vd1-AW-jtv"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugW-ke-AmY">
@@ -191,7 +178,6 @@
                         <outlet property="submitButton" destination="T0W-p2-itS" id="NVG-Ic-6IV"/>
                         <outlet property="usernameTextField" destination="Kg3-5l-olD" id="beR-tW-Or1"/>
                         <outletCollection property="options" destination="OST-Ce-ggb" collectionClass="NSMutableArray" id="XGm-s8-emm"/>
-                        <outletCollection property="options" destination="rnt-b5-cJC" collectionClass="NSMutableArray" id="5cP-KQ-uWB"/>
                         <outletCollection property="options" destination="ugW-ke-AmY" collectionClass="NSMutableArray" id="mPE-t5-dv6"/>
                         <outletCollection property="options" destination="WTX-jA-1St" collectionClass="NSMutableArray" id="pq7-a4-qtr"/>
                         <segue destination="jCf-wb-hko" kind="show" identifier="signInToSearchVC" id="n1z-gY-hYc"/>

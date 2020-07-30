@@ -73,6 +73,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate,UICollecti
         departmentCollectionView.isUserInteractionEnabled = true
         getDepartments(school:"A&S")
         util.getCurrentName()
+        util.getCurrentRole()
         // Do any additional setup after loading the view.
         //print(defaults.string(forKey: "name")!)
         
