@@ -2,7 +2,7 @@
 
 Student ID's
 
-474206,472956
+474206,472956,467319
 
 Known Limitation:
   1. Comments submitted anonymously cannot be deleted.
@@ -23,3 +23,4 @@ Search/Department Section Functionalities:
 After Log In, you will be redirected into a page with a search bar, scroll view and a stackview of buttons to select the school you want to view. If you are a professor, you will have an additional button too edit all your classes. The search bar will allow you to search courses by name, the search result will contain every course from every school and department. (It will be very limited, because we do not have a lot of courses in the database.) The school names at the bottom will allow you to view lists of department from that school. By default, the school is set to Arts&Sciences. By clicking on one of the department, you will see the list of courses from that department. (Only some department contains courses due to limitation described above.) Both search and clicking on department will lead you to another view, and clicking on a specific course will allow you to see the detail information of the course.
 
 Professor Functionalities:
+If user is a professor, he has authority to edit courses. In the search page, there's a Edit Courses Button under under the department section. When click that button, professor will be redirected to another page in which there're all the courses he teach. If there're many section of a certain course and there're many professor teach the same course, if professor teach a certain section of that course, he/she can also see this course. After clicking the cell in that tableview, professor will be redirected to the EditCourse page where he can edit how many people pass/fail the course, what is the average GPA, and how many people got A, B, C, D in the past semester. The data will be stored into firebase and everyone can view the status of that course after editing. 
