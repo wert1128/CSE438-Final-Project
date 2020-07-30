@@ -38,7 +38,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         theCell.content.text = theComments[indexPath.row].content
         theCell.likes.text = "\(theComments[indexPath.row].likes)"
         theCell.dislikes.text = "\(theComments[indexPath.row].dislikes)"
-        let curUsername = UserDefaults.standard.string(forKey: "username")
+        let curUsername = UserDefaults.standard.string(forKey: "name")
         if curUsername == theComments[indexPath.row].username{
             theCell.deleteButton.isHidden = false
         }else{
